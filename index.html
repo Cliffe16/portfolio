@@ -240,12 +240,25 @@
             overflow-x: auto;
         }
 
+        .diagram-container svg {
+            min-width: 760px;
+            height: auto;
+        }
+
         .diagram-caption {
             font-size: 0.85em;
             color: var(--text-muted);
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .inline-evidence {
+            margin-top: 14px;
+            background-color: rgba(0, 0, 0, 0.22);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 12px 14px;
         }
 
         details.screenshot-drawer {
@@ -272,7 +285,7 @@
             height: auto;
             border-radius: 4px;
             border: 1px solid var(--color-border);
-            margin-top: 12px;
+            margin-top: 10px;
             display: block;
         }
 
@@ -463,11 +476,24 @@
                     <li><b>Micro-Batch Stream Processing:</b> Achieved 30-second micro-batch latency and 1-minute tumbling-window spread/OHLCV aggregations in PySpark Structured Streaming, serving live orderbook depth via FastAPI and Dockerized Grafana dashboards.</li>
                 </ul>
 
+                <!-- Inline Strongest Dashboard Image -->
+                <div class="inline-evidence">
+                    <div class="diagram-caption">Live Grafana Orderbook &amp; Candlestick Dashboard (Served via FastAPI &amp; Cassandra)</div>
+                    <img src="assets/grafana.png" alt="Grafana Crypto Telemetry Dashboard" class="project-screenshot" onerror="this.style.display='none'">
+                </div>
+
+                <!-- Additional Verification Screenshots in Drawer -->
                 <details class="screenshot-drawer">
-                    <summary>[📊 View Grafana Orderbook &amp; Streaming Dashboard Screenshot]</summary>
+                    <summary>[📊 View Spark Streaming Logs, Fault Tolerance, Schema Capture &amp; Cassandra Queries]</summary>
                     <div style="margin-top: 8px; color: var(--text-muted); font-size: 0.92em;">
-                        Live market depth, bid-ask spread anomalies, and 1-minute candlestick aggregations served from Cassandra via FastAPI:
-                        <img src="assets/crypto-dashboard.png" alt="Grafana Crypto Telemetry Dashboard" class="project-screenshot" onerror="this.style.display='none'">
+                        <div><b>1. Fault Tolerance &amp; Recovery:</b></div>
+                        <img src="assets/fault_tolerance.png" alt="Fault Tolerance Verification" class="project-screenshot" onerror="this.style.display='none'">
+                        <div style="margin-top: 12px;"><b>2. Spark Structured Streaming Logs:</b></div>
+                        <img src="assets/spark_logs.png" alt="Spark Structured Streaming Logs" class="project-screenshot" onerror="this.style.display='none'">
+                        <div style="margin-top: 12px;"><b>3. Cassandra Time-Series Sink Query:</b></div>
+                        <img src="assets/cassandra_query.png" alt="Cassandra Query Output" class="project-screenshot" onerror="this.style.display='none'">
+                        <div style="margin-top: 12px;"><b>4. Debezium CDC Schema Capture:</b></div>
+                        <img src="assets/schema_capture.png" alt="Debezium Schema Capture" class="project-screenshot" onerror="this.style.display='none'">
                     </div>
                 </details>
                 <div style="margin-top: 10px;">
@@ -538,13 +564,6 @@
                     <li><b>Dimensional Modeling &amp; CI/CD:</b> Modeled 52,957 archived player-game rows, 4,920 team-game rows, and active season increments using dbt (SCD Type 2 player team histories), Astronomer Cosmos (`TestBehavior.AFTER_ALL`), `pytest`, and GitHub Actions.</li>
                 </ul>
 
-                <details class="screenshot-drawer">
-                    <summary>[📊 View Grafana NBA Dashboard &amp; Airflow DAG Visuals]</summary>
-                    <div style="margin-top: 8px; color: var(--text-muted); font-size: 0.92em;">
-                        Provisioned Grafana dashboard (True Shooting %, Game Score, 7-game rolling point differential) reading directly from BigQuery production marts:
-                        <img src="assets/nba-dashboard.png" alt="Grafana NBA Overview Dashboard" class="project-screenshot" onerror="this.style.display='none'">
-                    </div>
-                </details>
                 <div style="margin-top: 10px;">
                     <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a> &nbsp;|&nbsp; 
                     <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9#from-warehouse-to-dashboard" target="_blank" class="text-link">[View Dashboard Screenshots &amp; v2 Case Study (DEV.to) ↗]</a> &nbsp;|&nbsp;
@@ -609,13 +628,12 @@
                     <li><b>Windowed Price Anomaly Detection:</b> Implements 5-minute tumbling-window PySpark aggregations to flag volatile commodity price swings (&ge;15%) and exposes governed Gold tables for Power BI Direct Lake consumption.</li>
                 </ul>
 
-                <details class="screenshot-drawer">
-                    <summary>[📊 View Fabric Lakehouse Lineage &amp; Pipeline Visuals]</summary>
-                    <div style="margin-top: 8px; color: var(--text-muted); font-size: 0.92em;">
-                        OneLake Bronze/Silver/Gold Medallion lineage and PySpark quarantine routing:
-                        <img src="assets/fabric-lakehouse.png" alt="Microsoft Fabric Medallion Lakehouse Architecture" class="project-screenshot" onerror="this.style.display='none'">
-                    </div>
-                </details>
+                <!-- Inline Fabric Screenshot -->
+                <div class="inline-evidence">
+                    <div class="diagram-caption">OneLake Bronze/Silver/Gold Medallion Lineage &amp; Pipeline Visual</div>
+                    <img src="assets/Screenshot%20from%202026-06-04%2015-49-40.png" alt="Microsoft Fabric Medallion Lakehouse Architecture" class="project-screenshot" onerror="this.style.display='none'">
+                </div>
+
                 <div style="margin-top: 10px;">
                     <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub Repository &amp; PySpark Notebooks ↗]</a>
                 </div>
