@@ -6,11 +6,13 @@
     <title>Cliffe Oluoch Okoth | Data Engineer</title>
     
     <!-- SEO & Open Graph Tags for LinkedIn / WhatsApp Previews -->
-    <meta name="description" content="Cliffe Oluoch Okoth — Data Engineer with 2+ years of experience building scalable data pipelines across Microsoft Fabric, Azure Databricks, PySpark, Kafka, Debezium CDC, Airflow, dbt, Snowflake, and BigQuery.">
+    <meta name="description" content="Cliffe Oluoch Okoth — Data Engineer (2+ years) specializing in Microsoft Fabric (DP-700), Azure Databricks (DP-750), PySpark Structured Streaming, Delta Lake, Debezium CDC, Apache Kafka, Airflow, dbt, BigQuery, and Snowflake.">
     <meta property="og:title" content="Cliffe Oluoch Okoth | Data Engineer">
-    <meta property="og:description" content="Data Engineer specializing in Azure Databricks, Microsoft Fabric, PySpark Structured Streaming, Debezium CDC, Apache Kafka, Airflow, and dbt.">
+    <meta property="og:description" content="Data Engineer building Medallion Lakehouses on Microsoft Fabric, real-time Kafka/PySpark CDC streaming engines, and distributed Airflow/dbt ELT pipelines.">
     <meta property="og:url" content="https://cliffeokoth.site">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cliffeokoth.site/assets/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
     
     <!-- Terminal SVG Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23300a24'/><text x='14' y='68' font-family='monospace' font-size='55' font-weight='bold' fill='%238ae234'>&gt;_</text></svg>">
@@ -131,7 +133,7 @@
             border-bottom-color: var(--tab-active);
         }
 
-        /* Full-Width Content Area (Scrollbar flush right) */
+        /* Full-Width Content Area */
         #terminal-content {
             flex-grow: 1;
             width: 100%;
@@ -197,15 +199,22 @@
 
         .item-title { font-weight: bold; color: var(--color-blue); }
 
-        .arch-box {
-            background-color: rgba(0, 0, 0, 0.28);
-            border-left: 3px solid var(--color-blue);
-            padding: 10px 14px;
-            margin: 10px 0;
-            font-size: 0.95em;
-            color: #d8d8d8;
-            overflow-x: auto;
-            white-space: pre-wrap;
+        .project-card {
+            margin-bottom: 42px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .project-context-tag {
+            display: inline-block;
+            background-color: rgba(114, 159, 207, 0.16);
+            border: 1px solid var(--color-blue);
+            color: var(--color-blue);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.84em;
+            margin-left: 8px;
+            vertical-align: middle;
         }
 
         .metrics-badge {
@@ -218,6 +227,53 @@
             font-size: 0.88em;
             margin-right: 6px;
             margin-top: 6px;
+        }
+
+        /* Visual Architecture Diagram Container */
+        .diagram-container {
+            background-color: rgba(0, 0, 0, 0.32);
+            border: 1px solid var(--color-border);
+            border-left: 3px solid var(--color-blue);
+            border-radius: 6px;
+            padding: 14px;
+            margin: 14px 0;
+            overflow-x: auto;
+        }
+
+        .diagram-caption {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        details.screenshot-drawer {
+            margin-top: 10px;
+            background-color: rgba(0, 0, 0, 0.22);
+            border: 1px dashed var(--color-border);
+            border-radius: 6px;
+            padding: 8px 14px;
+        }
+
+        details.screenshot-drawer summary {
+            color: var(--color-yellow);
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        details.screenshot-drawer summary:hover {
+            color: #fff;
+        }
+
+        .project-screenshot {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            margin-top: 12px;
+            display: block;
         }
 
         .file-transfer {
@@ -279,7 +335,7 @@
 
     <div id="terminal-content">
         
-        <!-- PROFILE TAB: Tight 30-Second Pitch -->
+        <!-- PROFILE TAB -->
         <div id="profile" class="tab-pane active" role="tabpanel">
             
             <div style="text-align: center; margin: 10px 0 35px 0;">
@@ -292,7 +348,7 @@
 
             <div class="section-header" style="margin-top: 20px;">Professional Summary</div>
             <div>
-                Data Engineer with 2+ years of experience building scalable data pipelines and orchestrating workflows across fintech and agri-commodity environments. 
+                I'm a Data/Analytics Engineer with 2+ years of experience building batch and streaming data pipelines in Python and SQL. My work focuses on automating ingestion, orchestrating transformations with Airflow and dbt, processing real-time streams with Kafka and Spark, and modeling Medallion lakehouses on Microsoft Fabric and Azure Databricks.
             </div>
 
             <div class="section-header">Certifications &amp; Education</div>
@@ -304,7 +360,7 @@
                 </div>
                 <div class="item-title">Education:</div>
                 <div>
-                    • <b>Data Engineering Bootcamp</b> — Lux Academy<br>
+                    • <b>Data Engineering Bootcamp</b> — Lux Academy (2025)<br>
                     • <b>BSc Statistics and Programming</b> — Kenyatta University, Nairobi (Oct 2021 – Present)
                 </div>
             </div>
@@ -312,25 +368,25 @@
             <div class="section-header">Featured Projects</div>
             <div style="margin-bottom: 14px;">
                 1. <span class="highlight">Real-Time Crypto CDC &amp; Streaming Engine:</span><br>
-                &nbsp;&nbsp;&nbsp;Streamed <b>115,000+ market events across 3,700+ Binance trading pairs</b> with zero data loss using Debezium CDC on PostgreSQL WAL, Apache Kafka, and Spark Structured Streaming (30s micro-batch latency). <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a>
+                &nbsp;&nbsp;&nbsp;Streamed <b>115,000+ market events across 3,700+ Binance trading pairs</b> via PostgreSQL WAL Debezium CDC, Apache Kafka, and Spark Structured Streaming (30s micro-batch latency, LSN &amp; row-count reconciled). <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a>
             </div>
             <div style="margin-bottom: 14px;">
                 2. <span class="highlight">Distributed Cloud ELT &amp; Analytics Platform:</span><br>
-                &nbsp;&nbsp;&nbsp;Hybrid edge-to-cloud pipeline modeling <b>57,800+</b> NBA game/player rows across 3 seasons in BigQuery &amp; Snowflake (v1) <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a> &nbsp;|&nbsp; <a href="http://100.96.130.48:3000/" target="_blank" class="text-link">[Live Grafana Dashboard ↗]</a>
+                &nbsp;&nbsp;&nbsp;Hybrid edge-to-cloud pipeline modeling <b>57,800+</b> NBA game/player rows across 3 seasons in BigQuery &amp; Snowflake (v1) <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a> &nbsp;|&nbsp; <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9#from-warehouse-to-dashboard" target="_blank" class="text-link">[Dashboard Case Study ↗]</a>
             </div>
             <div style="margin-bottom: 18px;">
-                3. <span class="highlight">Microsoft Fabric Agricultural Commodities Pipeline:</span><br>
-                &nbsp;&nbsp;&nbsp;End-to-end Medallion Lakehouse on OneLake using PySpark, Delta Lake, Dataflow Gen2, and Power BI Direct Lake for agricultural commodity analytics. <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub ↗]</a>
+                3. <span class="highlight">Microsoft Fabric Agricultural Commodities Pipeline (Reference Implementation):</span><br>
+                &nbsp;&nbsp;&nbsp;End-to-end Medallion Lakehouse on OneLake using PySpark, Delta Lake, Dataflow Gen2, and Power BI Direct Lake for agricultural commodity analytics <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub ↗]</a>
             </div>
             <div>
-                👉 <button class="text-link" onclick="switchTab('projects')">[View Full Technical Breakdowns in Projects →]</button>
+                👉 <button class="text-link" onclick="switchTab('projects')">[View Full Technical Breakdowns &amp; Diagrams in Projects →]</button>
             </div>
 
             <div class="section-header">Connect</div>
             <div>
                 <b>Email:</b> <a href="mailto:oluochcliffe13@gmail.com" class="text-link">oluochcliffe13@gmail.com</a> &nbsp;|&nbsp;
                 <b>GitHub:</b> <a href="https://github.com/Cliffe16" target="_blank" class="text-link">github.com/Cliffe16 ↗</a> &nbsp;|&nbsp;
-                <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cliffeoluoch/" target="_blank" class="text-link">linkedin/cliffeoluoch ↗</a> &nbsp;|&nbsp;
+                <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cliffeoluoch/" target="_blank" class="text-link">linkedin.com/in/cliffeoluoch ↗</a> &nbsp;|&nbsp;
                 <b>Resume:</b> <a href="Cliffe_Okoth.pdf" target="_blank" class="text-link">[Download Cliffe_Okoth.pdf ↗]</a>
             </div>
 
@@ -342,86 +398,234 @@
 
         <!-- PROJECTS TAB -->
         <div id="projects" class="tab-pane" role="tabpanel">
-            <div class="section-header" style="margin-top: 0;">Technical Projects</div>
+            <div class="section-header" style="margin-top: 0;">Technical Projects &amp; System Architectures</div>
 
             <!-- Project 1: Crypto Pipeline -->
-            <div style="margin-bottom: 40px;">
-                <span class="highlight" style="font-size: 1.25em;">1. Hybrid-Binance-Crypto-Market-Pipeline/</span><br>
+            <div class="project-card">
+                <span class="highlight" style="font-size: 1.25em;">1. Hybrid-Binance-Crypto-Market-Pipeline/</span>
+                <span class="project-context-tag">Micro-Batch Streaming CDC Architecture</span><br>
                 <div>
-                    <span class="metrics-badge">115,000+ Market Events</span>
+                    <span class="metrics-badge">115,000+ Reconciled Events</span>
                     <span class="metrics-badge">3,700+ Trading Pairs</span>
-                    <span class="metrics-badge">Debezium CDC (PostgreSQL WAL)</span>
+                    <span class="metrics-badge">Debezium WAL CDC</span>
                     <span class="metrics-badge">30s Spark Micro-Batch Latency</span>
                 </div>
-                <div class="arch-box">Architecture: Binance API ➔ Airflow &amp; PostgreSQL (WAL) ➔ Debezium CDC ➔ Apache Kafka ➔ Spark Structured Streaming ➔ Apache Cassandra ➔ FastAPI ➔ Grafana</div>
-                <b>Engineering Breakdown:</b>
+
+                <!-- Embedded SVG Architecture Diagram -->
+                <div class="diagram-container">
+                    <div class="diagram-caption">System Architecture Diagram — Change Data Capture &amp; Micro-Batch Streaming</div>
+                    <svg viewBox="0 0 880 95" width="100%" height="95" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Binance Crypto Pipeline Architecture Diagram">
+                        <defs>
+                            <marker id="arrow1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#eab308"/>
+                            </marker>
+                        </defs>
+                        <rect x="5" y="18" width="105" height="56" rx="6" fill="#2c001e" stroke="#8ae234" stroke-width="1.5"/>
+                        <text x="57" y="43" fill="#8ae234" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Binance API</text>
+                        <text x="57" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">3,700+ Pairs</text>
+
+                        <line x1="110" y1="46" x2="132" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+                        <rect x="135" y="18" width="125" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="197" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Airflow + PG</text>
+                        <text x="197" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">WAL Replication</text>
+
+                        <line x1="260" y1="46" x2="282" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+                        <rect x="285" y="18" width="135" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="352" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Debezium + Kafka</text>
+                        <text x="352" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">115k+ CDC Events</text>
+
+                        <line x1="420" y1="46" x2="442" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+                        <rect x="445" y="18" width="145" height="56" rx="6" fill="#2c001e" stroke="#8ae234" stroke-width="1.5"/>
+                        <text x="517" y="43" fill="#8ae234" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Spark Streaming</text>
+                        <text x="517" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">30s Batch / 1m OHLCV</text>
+
+                        <line x1="590" y1="46" x2="612" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+                        <rect x="615" y="18" width="120" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="675" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Cassandra DB</text>
+                        <text x="675" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Time-Series Sink</text>
+
+                        <line x1="735" y1="46" x2="757" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+                        <rect x="760" y="18" width="115" height="56" rx="6" fill="#2c001e" stroke="#eab308" stroke-width="1.5"/>
+                        <text x="817" y="43" fill="#eab308" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">FastAPI+Grafana</text>
+                        <text x="817" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Serving Layer</text>
+                    </svg>
+                </div>
+
+                <b>Engineering Breakdown &amp; Verification:</b>
                 <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
-                    <li><b>Change Data Capture:</b> Streamed 115,000+ market events across 3,700+ Binance trading pairs with zero data loss by deploying Debezium CDC on PostgreSQL Write-Ahead Logs (WAL) into Apache Kafka.</li>
-                    <li><b>Micro-Batch Stream Processing:</b> Achieved 30-second micro-batch latency and 1-minute windowed spread/OHLCV aggregations by engineering Spark Structured Streaming pipelines writing to Apache Cassandra and FastAPI inside Docker Compose.</li>
+                    <li><b>Log-Based Change Data Capture (CDC):</b> Streamed 115,000+ market events across 3,700+ Binance trading pairs by deploying Debezium CDC connectors reading directly from PostgreSQL Write-Ahead Logs (WAL) into partitioned Apache Kafka topics.</li>
+                    <li><b>Delivery Guarantees &amp; Reconciliation:</b> Verified end-to-end completeness between PostgreSQL source tables and Apache Cassandra sink partitions by tracking PostgreSQL replication slot LSN offsets, enforcing Spark checkpointing with `maxOffsetsPerTrigger`, and reconciling source-to-sink row counts.</li>
+                    <li><b>Micro-Batch Stream Processing:</b> Achieved 30-second micro-batch latency and 1-minute tumbling-window spread/OHLCV aggregations in PySpark Structured Streaming, serving live orderbook depth via FastAPI and Dockerized Grafana dashboards.</li>
                 </ul>
-                <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a>
+
+                <details class="screenshot-drawer">
+                    <summary>[📊 View Grafana Orderbook &amp; Streaming Dashboard Screenshot]</summary>
+                    <div style="margin-top: 8px; color: var(--text-muted); font-size: 0.92em;">
+                        Live market depth, bid-ask spread anomalies, and 1-minute candlestick aggregations served from Cassandra via FastAPI:
+                        <img src="assets/crypto-dashboard.png" alt="Grafana Crypto Telemetry Dashboard" class="project-screenshot" onerror="this.style.display='none'">
+                    </div>
+                </details>
+                <div style="margin-top: 10px;">
+                    <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub Repository &amp; Code ↗]</a>
+                </div>
             </div>
 
             <!-- Project 2: NBA ELT Pipeline -->
-            <div style="margin-bottom: 40px;">
-                <span class="highlight" style="font-size: 1.25em;">2. NBA-Analytics-Pipeline/ (Distributed Cloud ELT &amp; Analytics Platform)</span><br>
+            <div class="project-card">
+                <span class="highlight" style="font-size: 1.25em;">2. NBA-Analytics-Pipeline/</span>
+                <span class="project-context-tag">Hybrid Edge-to-Cloud ELT</span><br>
                 <div>
-                    <span class="metrics-badge">57,800+ Fact Rows</span>
-                    <span class="metrics-badge">&gt;99% Fewer Daily API Calls</span>
+                    <span class="metrics-badge">57,800+ Modeled Fact Rows</span>
+                    <span class="metrics-badge">&gt;Fewer Daily API Calls (550 ➔ 0–5)</span>
                     <span class="metrics-badge">SCD Type 2 dbt Marts</span>
                     <span class="metrics-badge">pytest + GitHub Actions CI/CD</span>
                 </div>
-                <div class="arch-box">Architecture: NBA Stats API ➔ FastAPI Edge Worker (Tailscale VPN + SQLite State) ➔ Apache Airflow (Azure VM) ➔ GCS Parquet / BigQuery (v2) &amp; Snowflake (v1) ➔ dbt (Cosmos) ➔ Grafana</div>
+
+                <!-- Embedded SVG Architecture Diagram -->
+                <div class="diagram-container">
+                    <div class="diagram-caption">System Architecture Diagram — Async Edge Extraction over Tailscale VPN to Cloud ELT</div>
+                    <svg viewBox="0 0 880 95" width="100%" height="95" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NBA Analytics Pipeline Architecture Diagram">
+                        <defs>
+                            <marker id="arrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#eab308"/>
+                            </marker>
+                        </defs>
+                        <rect x="5" y="18" width="110" height="56" rx="6" fill="#2c001e" stroke="#8ae234" stroke-width="1.5"/>
+                        <text x="60" y="43" fill="#8ae234" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">NBA Stats API</text>
+                        <text x="60" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Cloud IP Blocked</text>
+
+                        <line x1="115" y1="46" x2="137" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+                        <rect x="140" y="18" width="145" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="212" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">FastAPI Edge Worker</text>
+                        <text x="212" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Residential + SQLite</text>
+
+                        <line x1="285" y1="46" x2="307" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+                        <rect x="310" y="18" width="135" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="377" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Airflow (Azure VM)</text>
+                        <text x="377" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">HTTP 202 via Tailscale</text>
+
+                        <line x1="445" y1="46" x2="467" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+                        <rect x="470" y="18" width="130" height="56" rx="6" fill="#2c001e" stroke="#8ae234" stroke-width="1.5"/>
+                        <text x="535" y="43" fill="#8ae234" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Google BigQuery</text>
+                        <text x="535" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Snowflake in v1</text>
+
+                        <line x1="600" y1="46" x2="622" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+                        <rect x="625" y="18" width="120" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="685" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">dbt + Cosmos</text>
+                        <text x="685" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">SCD2 + DQC Tests</text>
+
+                        <line x1="745" y1="46" x2="767" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+                        <rect x="770" y="18" width="105" height="56" rx="6" fill="#2c001e" stroke="#eab308" stroke-width="1.5"/>
+                        <text x="822" y="43" fill="#eab308" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Grafana BI</text>
+                        <text x="822" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Code-Provisioned</text>
+                    </svg>
+                </div>
+
                 <b>Engineering Breakdown:</b>
                 <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
-                    <li><b>Distributed Edge-to-Cloud Extraction:</b> Guaranteed daily ingestion across rate-limited REST APIs by engineering a distributed Apache Airflow and FastAPI pipeline over Tailscale VPN with dynamic rate-limiting, SQLite checkpointing, and retry logic (cutting daily player API calls from ~550 to 0–5).</li>
-                    <li><b>Automated CI/CD &amp; Dimensional Modeling:</b> Caught schema-breaking changes in dimensional marts using dbt (SCD Type 2 player histories) coupled with automated `pytest` unit tests, dbt data quality checks, and GitHub Actions CI/CD workflows.</li>
+                    <li><b>Bypassed Cloud IP Firewalls:</b> Decoupled extraction from the Azure Airflow VM to a local Ubuntu edge worker over Tailscale VPN using an asynchronous HTTP 202 trigger-and-poll pattern with SQLite state recovery.</li>
+                    <li><b>99% API Load Reduction:</b> Built incremental BigQuery roster diffing and `finally`-block checkpointing that resumes interrupted runs from the last saved player ID, reducing daily player biography requests from ~550 calls to 0–5 calls.</li>
+                    <li><b>Dimensional Modeling &amp; CI/CD:</b> Modeled 52,957 archived player-game rows, 4,920 team-game rows, and active season increments using dbt (SCD Type 2 player team histories), Astronomer Cosmos (`TestBehavior.AFTER_ALL`), `pytest`, and GitHub Actions.</li>
                 </ul>
-                <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a> &nbsp;|&nbsp; 
-                <a href="http://100.96.130.48:3000/" target="_blank" class="text-link">[Live Grafana Dashboard ↗]</a> &nbsp;|&nbsp; 
-                <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9" target="_blank" class="text-link">[v2 Case Study &amp; Diagrams (DEV.to) ↗]</a> &nbsp;|&nbsp;
-                <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link">[v1 Case Study (Medium) ↗]</a>
+
+                <details class="screenshot-drawer">
+                    <summary>[📊 View Grafana NBA Dashboard &amp; Airflow DAG Visuals]</summary>
+                    <div style="margin-top: 8px; color: var(--text-muted); font-size: 0.92em;">
+                        Provisioned Grafana dashboard (True Shooting %, Game Score, 7-game rolling point differential) reading directly from BigQuery production marts:
+                        <img src="assets/nba-dashboard.png" alt="Grafana NBA Overview Dashboard" class="project-screenshot" onerror="this.style.display='none'">
+                    </div>
+                </details>
+                <div style="margin-top: 10px;">
+                    <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a> &nbsp;|&nbsp; 
+                    <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9#from-warehouse-to-dashboard" target="_blank" class="text-link">[View Dashboard Screenshots &amp; v2 Case Study (DEV.to) ↗]</a> &nbsp;|&nbsp;
+                    <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link">[v1 Architecture Case Study (Medium) ↗]</a>
+                </div>
             </div>
 
             <!-- Project 3: Microsoft Fabric Agri-Commodity Engine -->
-            <div style="margin-bottom: 40px;">
-                <span class="highlight" style="font-size: 1.25em;">3. fabric-agri-commodity-engine-pipelines/</span><br>
+            <div class="project-card" style="border-bottom: none;">
+                <span class="highlight" style="font-size: 1.25em;">3. fabric-agri-commodity-engine-pipelines/</span>
+                <span class="project-context-tag">Public Reference Implementation (Synthetic Data)</span><br>
                 <div>
                     <span class="metrics-badge">Microsoft Fabric (DP-700)</span>
-                    <span class="metrics-badge">OneLake Medallion Lakehouse</span>
-                    <span class="metrics-badge">PySpark &amp; Delta Lake</span>
-                    <span class="metrics-badge">Tumbling-Window Anomaly Detection</span>
+                    <span class="metrics-badge">3-Tier OneLake Medallion</span>
+                    <span class="metrics-badge">~100 Daily Fulfillment Batches Simulated</span>
+                    <span class="metrics-badge">&ge;15% 5-Min Price Swing Alerts</span>
                 </div>
-                <div class="arch-box">Architecture: Agri-Commodity Trading Feeds &amp; Fulfillment Logs ➔ OneLake Bronze (Parquet) ➔ PySpark Silver (Data Quality &amp; Quarantine) ➔ Gold Star Schema (Delta Lake) ➔ Power BI Direct Lake</div>
-                <b>Engineering Breakdown:</b>
-                <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
-                    <li><b>Medallion Lakehouse Architecture:</b> Engineered Bronze, Silver, and Gold layers on Delta Lake and Parquet in Microsoft Fabric OneLake using PySpark and SQL ELT transformations to standardize raw agricultural commodity pricing and fulfillment telemetry.</li>
-                    <li><b>Automated Data Quality &amp; Anomaly Detection:</b> Enforced PySpark data validation rules with dead-letter quarantine handling and implemented 5-minute tumbling-window anomaly detection to flag rapid commodity price swings (&ge;15%).</li>
-                </ul>
-                <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub Repo ↗]</a>
-            </div>
 
-            <!-- Project 4: Bandcamp dbt Data Cleaning -->
-            <div style="margin-bottom: 35px;">
-                <span class="highlight" style="font-size: 1.25em;">4. bandcamp-data-cleaning/</span><br>
-                <div>
-                    <span class="metrics-badge">dbt Core</span>
-                    <span class="metrics-badge">Modular SQL Modeling</span>
-                    <span class="metrics-badge">Custom Singular &amp; Generic DQC Tests</span>
+                <!-- Embedded SVG Architecture Diagram -->
+                <div class="diagram-container">
+                    <div class="diagram-caption">System Architecture Diagram — Microsoft Fabric OneLake Medallion &amp; Anomaly Detection</div>
+                    <svg viewBox="0 0 880 95" width="100%" height="95" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Microsoft Fabric Medallion Lakehouse Architecture Diagram">
+                        <defs>
+                            <marker id="arrow3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#eab308"/>
+                            </marker>
+                        </defs>
+                        <rect x="5" y="18" width="130" height="56" rx="6" fill="#2c001e" stroke="#8ae234" stroke-width="1.5"/>
+                        <text x="70" y="43" fill="#8ae234" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Synthetic Feeds</text>
+                        <text x="70" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Trades &amp; Fulfillment</text>
+
+                        <line x1="135" y1="46" x2="157" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="160" y="18" width="145" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="232" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">OneLake Bronze</text>
+                        <text x="232" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Raw Parquet Landing</text>
+
+                        <line x1="305" y1="46" x2="327" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="330" y="18" width="175" height="56" rx="6" fill="#2c001e" stroke="#8ae234" stroke-width="1.5"/>
+                        <text x="417" y="43" fill="#8ae234" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">PySpark Silver Layer</text>
+                        <text x="417" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">DQC Rules + Quarantine</text>
+
+                        <line x1="505" y1="46" x2="527" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="530" y="18" width="165" height="56" rx="6" fill="#2c001e" stroke="#729fcf" stroke-width="1.5"/>
+                        <text x="612" y="43" fill="#729fcf" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Gold Star Schema</text>
+                        <text x="612" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Delta Lake + 5m Windows</text>
+
+                        <line x1="695" y1="46" x2="717" y2="46" stroke="#eab308" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="720" y="18" width="155" height="56" rx="6" fill="#2c001e" stroke="#eab308" stroke-width="1.5"/>
+                        <text x="797" y="43" fill="#eab308" font-family="Ubuntu Mono, monospace" font-size="12" font-weight="bold" text-anchor="middle">Power BI Direct Lake</text>
+                        <text x="797" y="60" fill="#b0b0b0" font-family="Ubuntu Mono, monospace" font-size="10" text-anchor="middle">Semantic Reporting</text>
+                    </svg>
                 </div>
-                <div class="arch-box">Architecture: Raw Bandcamp Sales Events ➔ dbt Staging Views ➔ Standardized Currency/Transaction Models ➔ Automated SQL Data Quality Assertions</div>
-                <b>Engineering Breakdown:</b>
+
+                <b>Context &amp; Engineering Breakdown:</b>
                 <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
-                    <li><b>Analytics Engineering &amp; DQC:</b> Built a modular dbt transformation pipeline (`bandcamp_transformation`) to standardize raw digital music e-commerce transactions and enforce custom singular SQL data quality tests (`amount_over_usd_is_positive.sql`).</li>
+                    <li><b>Why This Repo Exists:</b> Because production code at SugarCube Africa is proprietary, I built this open-source reference project using <b>synthetic agricultural commodity pricing and fulfillment data</b> to publicly demonstrate the Microsoft Fabric Medallion patterns I architected in production.</li>
+                    <li><b>Medallion Lakehouse &amp; Quarantine Gates:</b> Processes simulated daily batches (~100 fulfillment logs and multi-region price feeds) through Bronze (Parquet), Silver (PySpark schema validation &amp; dead-letter quarantine routing for malformed records), and Gold star-schema Delta tables in OneLake.</li>
+                    <li><b>Windowed Price Anomaly Detection:</b> Implements 5-minute tumbling-window PySpark aggregations to flag volatile commodity price swings (&ge;15%) and exposes governed Gold tables for Power BI Direct Lake consumption.</li>
                 </ul>
-                <a href="https://github.com/Cliffe16/bandcamp-data-cleaning" target="_blank" class="text-link">[GitHub Repo ↗]</a>
+
+                <details class="screenshot-drawer">
+                    <summary>[📊 View Fabric Lakehouse Lineage &amp; Pipeline Visuals]</summary>
+                    <div style="margin-top: 8px; color: var(--text-muted); font-size: 0.92em;">
+                        OneLake Bronze/Silver/Gold Medallion lineage and PySpark quarantine routing:
+                        <img src="assets/fabric-lakehouse.png" alt="Microsoft Fabric Medallion Lakehouse Architecture" class="project-screenshot" onerror="this.style.display='none'">
+                    </div>
+                </details>
+                <div style="margin-top: 10px;">
+                    <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub Repository &amp; PySpark Notebooks ↗]</a>
+                </div>
             </div>
             
             <br>
             <div><span style="color: var(--color-green); font-weight: bold;">cliffe@ubuntu</span>:<span style="color: var(--color-blue); font-weight: bold;">~/projects</span>$ <span class="blink">_</span></div>
         </div>
 
-        <!-- EXPERIENCE TAB: Exact Bullets & Metrics from Cliffe_Okoth.pdf -->
+        <!-- EXPERIENCE TAB: Verified Dates & Titles from Cliffe_Okoth.pdf -->
         <div id="experience" class="tab-pane" role="tabpanel">
             <div class="section-header" style="margin-top: 0;">Professional Experience</div>
 
@@ -447,7 +651,7 @@
 
             <div class="section-header">Education</div>
             <div style="margin-bottom: 20px;">
-                • <span class="highlight">Lux Academy</span> | Data Engineering Bootcamp<br>
+                • <span class="highlight">Lux Academy</span> | Data Engineering Bootcamp (2025)<br>
                 • <span class="highlight">Kenyatta University, Nairobi</span> | BSc Statistics and Programming (Oct 2021 – Present)
             </div>
             
@@ -455,12 +659,14 @@
             <div><span style="color: var(--color-green); font-weight: bold;">cliffe@ubuntu</span>:<span style="color: var(--color-blue); font-weight: bold;">~/experience</span>$ <span class="blink">_</span></div>
         </div>
 
-        <!-- SKILLS & CERTS TAB: Exact Grouping from Cliffe_Okoth.pdf -->
+        <!-- SKILLS & CERTS TAB -->
         <div id="skills" class="tab-pane" role="tabpanel">
             <div class="section-header" style="margin-top: 0;">Certifications</div>
             <div style="margin-bottom: 25px;">
                 • <span class="highlight">Microsoft Certified: Fabric Data Engineer Associate (DP-700)</span><br>
-                • <span class="highlight">Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750)</span>
+                &nbsp;&nbsp;<span style="color: var(--text-muted);">Applied in production at SugarCube Africa &amp; open-source OneLake Medallion reference pipelines.</span><br><br>
+                • <span class="highlight">Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750)</span><br>
+                &nbsp;&nbsp;<span style="color: var(--text-muted);">Backed by hands-on PySpark Structured Streaming, Delta Lake Medallion modeling, and watermarking/checkpointing pipelines.</span>
             </div>
 
             <div class="section-header">Core Skills</div>
@@ -469,19 +675,19 @@
                 <div>Azure, Azure Databricks, Microsoft Fabric, OneLake, Delta Lake, Parquet</div>
                 
                 <div class="item-title">ETL/ELT &amp; Processing:</div>
-                <div>PySpark, Spark Structured Streaming, SQL, Python, Apache Airflow, dbt</div>
+                <div>PySpark, Spark Structured Streaming, SQL, Python, Apache Airflow, dbt (Astronomer Cosmos)</div>
                 
                 <div class="item-title">Data Quality &amp; Governance:</div>
-                <div>Data validation, dead-letter quarantine handling, dbt tests, pytest, schema evolution</div>
+                <div>Data validation, dead-letter quarantine handling, LSN/row-count reconciliation, dbt tests, pytest, schema evolution</div>
                 
                 <div class="item-title">Modeling &amp; Warehousing:</div>
                 <div>Star schema, SCD Type 2, dimensional modeling, Snowflake, Google BigQuery, PostgreSQL, Apache Cassandra</div>
                 
                 <div class="item-title">Integration &amp; Delivery:</div>
-                <div>REST APIs, FastAPI, Debezium (CDC), Apache Kafka, Celery/Redis, GitHub Actions CI/CD, Docker</div>
+                <div>REST APIs, FastAPI, Debezium (WAL CDC), Apache Kafka, Celery/Redis, Tailscale VPN, GitHub Actions CI/CD, Docker</div>
                 
                 <div class="item-title">Reporting &amp; BI:</div>
-                <div>Power BI (DAX, Direct Lake), Grafana (Provisioned Dashboards)</div>
+                <div>Power BI (DAX, Direct Lake), Grafana (Code-Provisioned Dashboards)</div>
             </div>
             
             <br>
@@ -526,7 +732,7 @@
             <div class="section-header" style="margin-top: 0;">Contact &amp; Profiles</div>
 
             <div style="line-height: 2.1; margin-bottom: 30px;">
-                <b>Phone:</b> +254 797 752 778<br>
+                <b>Location:</b> Nairobi, Kenya (Open to Remote, Hybrid &amp; On-site)<br>
                 <b>Email:</b> <a href="mailto:oluochcliffe13@gmail.com" class="text-link">oluochcliffe13@gmail.com</a><br>
                 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cliffeoluoch/" target="_blank" class="text-link">linkedin.com/in/cliffeoluoch ↗</a><br>
                 <b>GitHub:</b> <a href="https://github.com/Cliffe16" target="_blank" class="text-link">github.com/Cliffe16 ↗</a><br>
