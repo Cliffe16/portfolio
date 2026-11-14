@@ -131,14 +131,14 @@
             border-bottom-color: var(--tab-active);
         }
 
-        /* Content Area */
+        /* Full-Width Content Area (Scrollbar flush right) */
         #terminal-content {
             flex-grow: 1;
+            width: 100%;
             padding: 30px 40px;
             overflow-y: auto;
             font-size: 1.15em;
             line-height: 1.6;
-            max-width: 1050px;
         }
 
         .tab-pane {
@@ -190,7 +190,7 @@
 
         .grid-list {
             display: grid;
-            grid-template-columns: 210px 1fr;
+            grid-template-columns: 220px 1fr;
             gap: 8px 20px;
             margin-bottom: 15px;
         }
@@ -282,9 +282,9 @@
         <!-- PROFILE TAB: Tight 30-Second Pitch -->
         <div id="profile" class="tab-pane active" role="tabpanel">
             
-            <div style="margin: 5px 0 25px 0;">
-                <h1 style="margin:0; color: var(--color-green); font-size: 2.5em; letter-spacing: 1px;">CLIFFE OLUOCH OKOTH</h1>
-                <div style="font-size: 1.25em; color: var(--text-main); font-weight: bold; margin-top: 4px;">Data Engineer</div>
+            <div style="text-align: center; margin: 10px 0 35px 0;">
+                <h1 style="margin:0; color: var(--color-green); font-size: 2.8em; letter-spacing: 2px;">CLIFFE OLUOCH OKOTH</h1>
+                <div style="font-size: 1.25em; color: var(--text-main); font-weight: bold; margin-top: 5px;">Data Engineer</div>
                 <div style="font-size: 0.95em; color: var(--color-yellow); margin-top: 6px;">
                     📍 Nairobi, Kenya &nbsp;|&nbsp; 🌍 Open to Remote, Hybrid &amp; On-site Roles
                 </div>
@@ -311,19 +311,19 @@
 
             <div class="section-header">Flagship Engineering Systems</div>
             <div style="margin-bottom: 14px;">
-                1. <span class="highlight">Real-Time Crypto CDC &amp; Streaming Engine (Debezium, Kafka, Spark Streaming, Cassandra):</span><br>
-                &nbsp;&nbsp;&nbsp;Streamed <b>115,000+ market events across 3,700+ Binance trading pairs</b> with zero data loss using Debezium CDC on PostgreSQL WAL and Spark Structured Streaming (30s micro-batch latency).
+                1. <span class="highlight">Real-Time Crypto CDC &amp; Streaming Engine:</span><br>
+                &nbsp;&nbsp;&nbsp;Streamed <b>115,000+ market events across 3,700+ Binance trading pairs</b> with zero data loss using Debezium CDC on PostgreSQL WAL, Apache Kafka, and Spark Structured Streaming (30s micro-batch latency). <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a>
             </div>
             <div style="margin-bottom: 14px;">
-                2. <span class="highlight">Distributed Cloud ELT &amp; Analytics Platform (Airflow, dbt, BigQuery, Snowflake, Grafana):</span><br>
-                &nbsp;&nbsp;&nbsp;Hybrid edge-to-cloud pipeline modeling <b>57,800+</b> NBA game/player rows across 3 seasons; cut daily API requests by <b>&gt;99%</b> using async FastAPI polling and SQLite checkpointing.
+                2. <span class="highlight">Distributed Cloud ELT &amp; Analytics Platform:</span><br>
+                &nbsp;&nbsp;&nbsp;Hybrid edge-to-cloud pipeline modeling <b>57,800+</b> NBA game/player rows across 3 seasons in BigQuery &amp; Snowflake; cut daily API requests by <b>&gt;99%</b> using async FastAPI polling and SQLite checkpointing. <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a> &nbsp;|&nbsp; <a href="http://100.96.130.48:3000/" target="_blank" class="text-link">[Live Grafana Dashboard ↗]</a>
             </div>
             <div style="margin-bottom: 18px;">
-                3. <span class="highlight">Microsoft Fabric Medallion Lakehouse &amp; Real-Time KQL Eventhouse:</span><br>
-                &nbsp;&nbsp;&nbsp;End-to-end Bronze/Silver/Gold Lakehouse on OneLake using PySpark, Dataflow Gen2, KQL Eventhouse streaming, and Power BI Direct Lake semantic models.
+                3. <span class="highlight">Microsoft Fabric Agri-Commodity Engine Pipelines:</span><br>
+                &nbsp;&nbsp;&nbsp;End-to-end Bronze/Silver/Gold Medallion Lakehouse on OneLake using PySpark, Delta Lake, Dataflow Gen2, and Power BI Direct Lake for agricultural commodity analytics. <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub ↗]</a>
             </div>
             <div>
-                👉 <button class="text-link" onclick="switchTab('projects')">[View Full Architecture Diagrams, Metrics &amp; GitHub Repos in Projects →]</button>
+                👉 <button class="text-link" onclick="switchTab('projects')">[View Full Architecture Diagrams, Metrics &amp; Technical Breakdowns in Projects →]</button>
             </div>
 
             <div class="section-header">Quick Connect</div>
@@ -378,26 +378,27 @@
                     <li><b>Automated CI/CD &amp; Dimensional Modeling:</b> Caught schema-breaking changes in dimensional marts using dbt (SCD Type 2 player histories) coupled with automated `pytest` unit tests, dbt data quality checks, and GitHub Actions CI/CD workflows.</li>
                 </ul>
                 <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a> &nbsp;|&nbsp; 
+                <a href="http://100.96.130.48:3000/" target="_blank" class="text-link">[Live Grafana Dashboard ↗]</a> &nbsp;|&nbsp; 
                 <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9" target="_blank" class="text-link">[v2 Case Study &amp; Diagrams (DEV.to) ↗]</a> &nbsp;|&nbsp;
                 <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link">[v1 Case Study (Medium) ↗]</a>
             </div>
 
-            <!-- Project 3: Microsoft Fabric Medallion Lakehouse -->
+            <!-- Project 3: Microsoft Fabric Agri-Commodity Engine -->
             <div style="margin-bottom: 40px;">
-                <span class="highlight" style="font-size: 1.25em;">3. Microsoft-Fabric-Medallion-Lakehouse/</span><br>
+                <span class="highlight" style="font-size: 1.25em;">3. fabric-agri-commodity-engine-pipelines/</span><br>
                 <div>
                     <span class="metrics-badge">Microsoft Fabric (DP-700)</span>
-                    <span class="metrics-badge">OneLake Delta Lake</span>
-                    <span class="metrics-badge">PySpark &amp; KQL Eventhouse</span>
-                    <span class="metrics-badge">Power BI Direct Lake</span>
+                    <span class="metrics-badge">OneLake Medallion Lakehouse</span>
+                    <span class="metrics-badge">PySpark &amp; Delta Lake</span>
+                    <span class="metrics-badge">Tumbling-Window Anomaly Detection</span>
                 </div>
-                <div class="arch-box">Architecture: Raw Telemetry &amp; Operational Feeds ➔ OneLake Bronze (Parquet) ➔ PySpark &amp; Dataflow Gen2 Silver (Delta Lake) ➔ Gold Star Schema &amp; KQL Eventhouse ➔ Power BI Direct Lake</div>
+                <div class="arch-box">Architecture: Agri-Commodity Trading Feeds &amp; Fulfillment Logs ➔ OneLake Bronze (Parquet) ➔ PySpark Silver (Data Quality &amp; Quarantine) ➔ Gold Star Schema (Delta Lake) ➔ Power BI Direct Lake</div>
                 <b>Engineering Breakdown:</b>
                 <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
-                    <li><b>Medallion Lakehouse Engineering:</b> Implemented Bronze, Silver, and Gold layers in Microsoft Fabric OneLake using PySpark notebooks and Delta Lake tables, enforcing schema validation and deduplication before surfacing Gold star schemas via Power BI Direct Lake.</li>
-                    <li><b>Real-Time Intelligence:</b> Configured KQL Eventhouse pipelines for low-latency event querying and anomaly detection across streaming operational logs.</li>
+                    <li><b>Medallion Lakehouse Architecture:</b> Engineered Bronze, Silver, and Gold layers on Delta Lake and Parquet in Microsoft Fabric OneLake using PySpark and SQL ELT transformations to standardize raw agricultural commodity pricing and fulfillment telemetry.</li>
+                    <li><b>Automated Data Quality &amp; Anomaly Detection:</b> Enforced PySpark data validation rules with dead-letter quarantine handling and implemented 5-minute tumbling-window anomaly detection to flag rapid commodity price swings (&ge;15%).</li>
                 </ul>
-                <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[View Fabric Repository on GitHub ↗]</a>
+                <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub Repo ↗]</a>
             </div>
 
             <!-- Project 4: Bandcamp dbt Data Cleaning -->
@@ -463,7 +464,7 @@
             </div>
 
             <div class="section-header">Core Skills</div>
-            <div class="grid-list" style="max-width: 850px;">
+            <div class="grid-list">
                 <div class="item-title">Azure &amp; Lakehouse:</div>
                 <div>Azure, Azure Databricks, Microsoft Fabric, OneLake, Delta Lake, Parquet</div>
                 
