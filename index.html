@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cliffe Oluoch - Data Engineer</title>
+    <title>Cliffe Oluoch Okoth | Data Engineer</title>
+    
+    <!-- SEO & Open Graph Tags for LinkedIn / WhatsApp Previews -->
+    <meta name="description" content="Cliffe Oluoch Okoth — Data Engineer with 2+ years of experience building scalable data pipelines across Microsoft Fabric, Azure Databricks, PySpark, Kafka, Debezium CDC, Airflow, dbt, Snowflake, and BigQuery.">
+    <meta property="og:title" content="Cliffe Oluoch Okoth | Data Engineer">
+    <meta property="og:description" content="Data Engineer specializing in Azure Databricks, Microsoft Fabric, PySpark Structured Streaming, Debezium CDC, Apache Kafka, Airflow, and dbt.">
+    <meta property="og:url" content="https://cliffeokoth.site">
+    <meta property="og:type" content="website">
+    
+    <!-- Terminal SVG Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23300a24'/><text x='14' y='68' font-family='monospace' font-size='55' font-weight='bold' fill='%238ae234'>&gt;_</text></svg>">
+
+    <!-- Load Ubuntu Mono from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-color: #300a24;
@@ -11,22 +27,27 @@
             --tab-active: #300a24;
             --tab-hover: #451b38;
             --text-main: #eeeeee;
-            --text-muted: #aaaaaa;
+            --text-muted: #b0b0b0;
             --color-green: #8ae234;
             --color-blue: #729fcf;
             --color-yellow: #eab308;
             --color-border: #555555;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+            font-family: 'Ubuntu Mono', monospace;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             height: 100vh;
+            height: 100dvh;
             overflow: hidden;
         }
 
@@ -57,7 +78,7 @@
             transform: translateX(-20px);
         }
 
-        /* Tab Bar */
+        /* Accessible Button Tab Bar */
         #tab-bar {
             display: flex;
             align-items: flex-end;
@@ -65,7 +86,6 @@
             border-bottom: 1px solid var(--color-border);
             padding-left: 10px;
             height: 48px; 
-            box-sizing: border-box;
             overflow-x: auto;
             overflow-y: hidden;
             flex-shrink: 0; 
@@ -77,32 +97,34 @@
             justify-content: center;
             padding: 0 20px;
             height: 38px; 
-            box-sizing: border-box;
             cursor: pointer;
             border-radius: 8px 8px 0 0;
             margin-right: 4px;
             background-color: #3b3a39;
             color: var(--text-muted);
+            font-family: inherit;
+            font-size: 1.05em;
             border-left: 1px solid transparent;
             border-right: 1px solid transparent;
             border-top: 2px solid transparent;
             border-bottom: 1px solid transparent;
-            font-size: 1.05em;
             transition: background-color 0.2s, color 0.2s;
             user-select: none;
             position: relative;
-            bottom: -1px; 
+            bottom: -1px;
+            white-space: nowrap;
         }
 
-        .tab:hover {
+        .tab:hover, .tab:focus-visible {
             background-color: var(--tab-hover);
             color: var(--text-main);
+            outline: none;
         }
 
         .tab.active {
             background-color: var(--tab-active);
             color: var(--text-main);
-            text-shadow: 0 0 1px rgba(238, 238, 238, 0.5);
+            font-weight: bold;
             border-left-color: var(--color-border);
             border-right-color: var(--color-border);
             border-top-color: var(--color-yellow);
@@ -116,11 +138,12 @@
             overflow-y: auto;
             font-size: 1.15em;
             line-height: 1.6;
+            max-width: 1050px;
         }
 
         .tab-pane {
             display: none;
-            animation: fadeIn 0.3s;
+            animation: fadeIn 0.25s ease-out;
         }
 
         .tab-pane.active {
@@ -128,17 +151,17 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
+            from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Recruiter-Friendly Formatting Classes */
+        /* Formatting Classes */
         .section-header {
             color: var(--color-green);
             font-weight: bold;
             font-size: 1.15em;
-            margin-top: 35px;
-            margin-bottom: 15px;
+            margin-top: 32px;
+            margin-bottom: 14px;
             border-bottom: 1px dashed var(--color-border);
             padding-bottom: 5px;
             text-transform: uppercase;
@@ -156,25 +179,69 @@
             color: var(--color-yellow);
             text-decoration: underline;
             font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+            padding: 0;
         }
         .text-link:hover { color: #fff; }
 
         .grid-list {
             display: grid;
-            grid-template-columns: 160px 1fr;
+            grid-template-columns: 210px 1fr;
             gap: 8px 20px;
             margin-bottom: 15px;
         }
 
         .item-title { font-weight: bold; color: var(--color-blue); }
 
+        .arch-box {
+            background-color: rgba(0, 0, 0, 0.28);
+            border-left: 3px solid var(--color-blue);
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 0.95em;
+            color: #d8d8d8;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .metrics-badge {
+            display: inline-block;
+            background-color: rgba(138, 226, 52, 0.12);
+            border: 1px solid var(--color-green);
+            color: var(--color-green);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.88em;
+            margin-right: 6px;
+            margin-top: 6px;
+        }
+
         .file-transfer {
-            font-family: 'Ubuntu Mono', monospace;
             color: var(--text-muted);
             margin-top: 15px;
             padding: 15px;
-            background-color: rgba(0,0,0,0.2);
+            background-color: rgba(0,0,0,0.25);
             border-radius: 4px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 680px) {
+            #terminal-content {
+                padding: 20px 18px;
+                font-size: 1.05em;
+            }
+            .grid-list {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+            .tab {
+                padding: 0 12px;
+                font-size: 0.95em;
+            }
         }
 
         /* Scrollbar */
@@ -201,94 +268,70 @@
         <div class="window-title">cliffe@ubuntu: ~ (cliffeokoth.site)</div>
     </div>
 
-    <div id="tab-bar">
-        <div class="tab active" onclick="switchTab('profile')">Profile</div>
-        <div class="tab" onclick="switchTab('experience')">Experience</div>
-        <div class="tab" onclick="switchTab('projects')">Projects</div>
-        <div class="tab" onclick="switchTab('skills')">Skills</div>
-        <div class="tab" onclick="switchTab('blogs')">Blogs</div>
-        <div class="tab" onclick="switchTab('contact')">Contact</div>
+    <div id="tab-bar" role="tablist" aria-label="Portfolio Sections">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="profile" onclick="switchTab('profile')">Profile</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="projects" onclick="switchTab('projects')">Projects</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="experience" onclick="switchTab('experience')">Experience</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="skills" onclick="switchTab('skills')">Skills &amp; Certs</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="blogs" onclick="switchTab('blogs')">Blogs</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="contact" onclick="switchTab('contact')">Contact</button>
     </div>
 
     <div id="terminal-content">
         
-        <!-- PROFILE TAB -->
-        <div id="profile" class="tab-pane active">
+        <!-- PROFILE TAB: Tight 30-Second Pitch -->
+        <div id="profile" class="tab-pane active" role="tabpanel">
             
-            <div style="text-align: center; margin: 10px 0 40px 0;">
-                <h1 style="margin:0; color: var(--color-green); font-size: 2.8em; letter-spacing: 2px;">CLIFFE OLUOCH OKOTH</h1>
-                <div style="font-size: 1.2em; color: var(--text-muted); margin-top: 5px;">Data Engineer | Analytics Engineer | Backend Developer</div>
+            <div style="margin: 5px 0 25px 0;">
+                <h1 style="margin:0; color: var(--color-green); font-size: 2.5em; letter-spacing: 1px;">CLIFFE OLUOCH OKOTH</h1>
+                <div style="font-size: 1.25em; color: var(--text-main); font-weight: bold; margin-top: 4px;">Data Engineer</div>
+                <div style="font-size: 0.95em; color: var(--color-yellow); margin-top: 6px;">
+                    📍 Nairobi, Kenya &nbsp;|&nbsp; 🌍 Open to Remote, Hybrid &amp; On-site Roles
+                </div>
             </div>
 
-            <div class="section-header">Overview</div>
+            <div class="section-header" style="margin-top: 20px;">Professional Summary</div>
             <div>
-                Data &amp; Analytics Engineer building production ETL/ELT pipelines, real-time streaming architectures, and scalable backend systems. Experienced in bridging the gap between raw data extraction and actionable business intelligence.<br><br>
+                Data Engineer with 2+ years of experience building scalable data pipelines and orchestrating workflows across fintech and agri-commodity environments. Recently eliminated <b>10+ hours of manual auditing per week</b>, cut daily API payloads by <b>97% (200KB to 5KB)</b>, and architected Bronze, Silver, and Gold Medallion layers on Delta Lake and Parquet in Microsoft Fabric OneLake.
             </div>
 
-            <div class="section-header">Core Skills</div>
+            <div class="section-header">Certifications &amp; Education</div>
             <div class="grid-list">
-                <div class="item-title">Languages:</div><div>Python, SQL, Bash</div>
-                <div class="item-title">Orchestration:</div><div>Apache Airflow, dbt (Astronomer Cosmos), Kafka, PySpark</div>
-                <div class="item-title">Databases:</div><div>Google BigQuery, Snowflake, PostgreSQL, MySQL, Apache Cassandra, Redis</div>
-                <div class="item-title">Backend &amp; Infra:</div><div>Django, FastAPI, Celery, Docker, Linux (Ubuntu), Azure, Tailscale</div>
-                <div class="item-title">Certifications:</div><div>Microsoft Certified: Fabric Data Engineer Associate (DP-700) &amp; Azure Databricks Data Engineer (DP-750)</div>
+                <div class="item-title">Certifications:</div>
+                <div>
+                    • <span class="highlight">Microsoft Certified:</span> Fabric Data Engineer Associate (DP-700)<br>
+                    • <span class="highlight">Microsoft Certified:</span> Azure Databricks Data Engineer Associate (DP-750)
+                </div>
+                <div class="item-title">Education:</div>
+                <div>
+                    • <b>Data Engineering Bootcamp</b> — Lux Academy<br>
+                    • <b>BSc Statistics and Programming</b> — Kenyatta University, Nairobi (Oct 2021 – Present)
+                </div>
             </div>
 
-            <div class="section-header">Recent Experience</div>
-            <div style="margin-bottom: 15px;">
-                <span class="highlight">SugarCube Africa</span> | Data Analyst &amp; Backend Developer (September 2025 - Present)<br>
-                <span style="color: var(--text-muted)">↳ Built production Python ETL pipelines bulk-loading 4,000+ historical price records into PostgreSQL, orchestrated Celery/Redis workflows to cut dashboard response times from 2+ minutes to near-instantaneous, and automated invoice web-scraping.</span>
+            <div class="section-header">Flagship Engineering Systems</div>
+            <div style="margin-bottom: 14px;">
+                1. <span class="highlight">Real-Time Crypto CDC &amp; Streaming Engine (Debezium, Kafka, Spark Streaming, Cassandra):</span><br>
+                &nbsp;&nbsp;&nbsp;Streamed <b>115,000+ market events across 3,700+ Binance trading pairs</b> with zero data loss using Debezium CDC on PostgreSQL WAL and Spark Structured Streaming (30s micro-batch latency).
+            </div>
+            <div style="margin-bottom: 14px;">
+                2. <span class="highlight">Distributed Cloud ELT &amp; Analytics Platform (Airflow, dbt, BigQuery, Snowflake, Grafana):</span><br>
+                &nbsp;&nbsp;&nbsp;Hybrid edge-to-cloud pipeline modeling <b>57,800+</b> NBA game/player rows across 3 seasons; cut daily API requests by <b>&gt;99%</b> using async FastAPI polling and SQLite checkpointing.
+            </div>
+            <div style="margin-bottom: 18px;">
+                3. <span class="highlight">Microsoft Fabric Medallion Lakehouse &amp; Real-Time KQL Eventhouse:</span><br>
+                &nbsp;&nbsp;&nbsp;End-to-end Bronze/Silver/Gold Lakehouse on OneLake using PySpark, Dataflow Gen2, KQL Eventhouse streaming, and Power BI Direct Lake semantic models.
             </div>
             <div>
-                <span class="highlight">Flamingo Commodities</span> | Sugar Market Analyst Intern (May 2025 - August 2025)<br>
-                <span style="color: var(--text-muted)">↳ Built staging-based PostgreSQL MERGE ingestion scripts, configured logical replication to NeonDB, and developed market surveillance dashboards.</span>
+                👉 <button class="text-link" onclick="switchTab('projects')">[View Full Architecture Diagrams, Metrics &amp; GitHub Repos in Projects →]</button>
             </div>
 
-            <div class="section-header">Featured Work</div>
-            <div style="margin-bottom: 10px;">
-                • <span class="highlight">NBA-Analytics-Pipeline:</span> Hybrid edge-to-cloud ELT pipeline with async FastAPI worker, Airflow, BigQuery, dbt &amp; Grafana <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a>
-            </div>
-            <div style="margin-bottom: 10px;">
-                • <span class="highlight">housing-price-pipeline:</span> Automated property web scraping &amp; Airflow orchestration pipeline <a href="https://github.com/Cliffe16/housing-price-pipeline" target="_blank" class="text-link">[GitHub ↗]</a>
-            </div>
-            <div style="margin-bottom: 10px;">
-                • <span class="highlight">open_weather_streaming:</span> Real-time weather event streaming pipeline using Apache Kafka &amp; Cassandra <a href="https://github.com/Cliffe16/Lux_Assignments/tree/main/Kafka/open_weather_streaming" target="_blank" class="text-link">[GitHub ↗]</a>
-            </div>
-            <div style="margin-bottom: 10px;">
-                • <span class="highlight">jumia_computers_scraper:</span> Automated e-commerce pagination scraper with Pandas validation &amp; PostgreSQL storage <a href="https://github.com/Cliffe16/jumia_computers_scraper" target="_blank" class="text-link">[GitHub ↗]</a>
-            </div>
+            <div class="section-header">Quick Connect</div>
             <div>
-                • <span class="highlight">de-handbook:</span> Practical reference notes and design patterns for modern data engineering architectures <a href="https://github.com/Cliffe16/de-handbook" target="_blank" class="text-link">[GitHub ↗]</a>
-            </div>
-
-            <div class="section-header">Latest Writing</div>
-            <div style="margin-bottom: 8px;">
-                • <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9" target="_blank" class="text-link">Outgrowing My First Data Pipeline (Airflow, BigQuery, dbt &amp; Grafana) ↗</a>
-            </div>
-            <div style="margin-bottom: 8px;">
-                • <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link">Defeating Enterprise API Firewalls with a Hybrid Edge-to-Cloud ELT Architecture ↗</a>
-            </div>
-            <div style="margin-bottom: 8px;">
-                • <a href="https://dev.to/cliffe_okoth/how-apache-kafka-powers-real-time-data-pipelines-3ef9" target="_blank" class="text-link">How Apache Kafka Powers Real-Time Data Pipelines ↗</a>
-            </div>
-            <div>
-                • <a href="https://dev.to/cliffe_okoth/from-local-scripts-to-cloud-servers-demystifying-docker-for-dataops-38h" target="_blank" class="text-link">From Local Scripts to Cloud Servers: Demystifying Docker for DataOps ↗</a>
-            </div>
-
-            <div class="section-header">Contact &amp; Links</div>
-            <div style="line-height: 2; margin-bottom: 15px;">
-                <b>Email:</b> <a href="mailto:oluochcliffe13@gmail.com" class="text-link">oluochcliffe13@gmail.com</a><br>
-                <b>DEV.to:</b> <a href="https://dev.to/cliffe_okoth" target="_blank" class="text-link">dev.to/cliffe_okoth ↗</a><br>
-                <b>Medium:</b> <a href="https://medium.com/@cliffe016" target="_blank" class="text-link">medium.com/@cliffe016 ↗</a><br>
-                <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cliffeoluoch/" target="_blank" class="text-link">linkedin.com/in/cliffeoluoch ↗</a><br>
-                <b>GitHub:</b> <a href="https://github.com/Cliffe16" target="_blank" class="text-link">github.com/Cliffe16 ↗</a>
-            </div>
-
-            <div class="section-header">Resume</div>
-            <div class="file-transfer" style="margin-bottom: 30px;">
-                Initiating file transfer protocol...<br>
-                [=================================================>] 100%<br>
-                <span style="color: var(--text-main);">File ready. <a href="Cliffe_Oluoch_Resume.pdf" target="_blank" class="text-link">[Download Cliffe_Oluoch_Resume.pdf]</a></span>
+                <b>Email:</b> <a href="mailto:oluochcliffe13@gmail.com" class="text-link">oluochcliffe13@gmail.com</a> &nbsp;|&nbsp;
+                <b>GitHub:</b> <a href="https://github.com/Cliffe16" target="_blank" class="text-link">github.com/Cliffe16 ↗</a> &nbsp;|&nbsp;
+                <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cliffeoluoch/" target="_blank" class="text-link">in/cliffeoluoch ↗</a> &nbsp;|&nbsp;
+                <b>Resume:</b> <a href="Cliffe_Okoth.pdf" target="_blank" class="text-link">[Download Cliffe_Okoth.pdf ↗]</a>
             </div>
 
             <br><br>
@@ -297,150 +340,205 @@
             </div>
         </div>
 
-        <!-- EXPERIENCE TAB -->
-        <div id="experience" class="tab-pane">
-            <div class="section-header" style="margin-top: 0;">Professional Timeline</div>
-
-            <div style="margin-bottom: 30px;">
-                <span class="highlight">SugarCube Africa</span> | Data Analyst &amp; Backend Developer (September 2025 - Present)<br>
-                <span style="color: var(--text-muted)">↳ Built production Python ETL pipelines that validated and bulk-loaded 4,000+ historical sugar price records into PostgreSQL with resilient error handling.<br>
-                ↳ Orchestrated Celery/Redis workflows and caching to reduce dashboard response times from 2+ minutes to near-instantaneous.<br>
-                ↳ Configured PostgreSQL/MySQL routing, zero-downtime staging-to-production migrations, and backend workflows for KYC verification and automated invoice generation.</span>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <span class="highlight">Flamingo Commodities</span> | Sugar Market Analyst Intern (May 2025 - August 2025)<br>
-                <span style="color: var(--text-muted)">↳ Built ingestion tooling and PostgreSQL MERGE scripts for staging-based CSV ingestion and deduplication.<br>
-                ↳ Assisted with configuring PostgreSQL logical replication to a cloud Neon database and developed market surveillance reporting.</span>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <span class="highlight">Zoa Taka Limited</span> | Industrial Attachment (2025)<br>
-                <span style="color: var(--text-muted)">↳ Applied data-driven insights and technical operations support within the waste management sector, ensuring data integrity and operational efficiency.</span>
-            </div>
-            
-            <br><br>
-            <div><span style="color: var(--color-green); font-weight: bold;">cliffe@ubuntu</span>:<span style="color: var(--color-blue); font-weight: bold;">~/experience</span>$ <span class="blink">_</span></div>
-        </div>
-
         <!-- PROJECTS TAB -->
-        <div id="projects" class="tab-pane">
-            <div class="section-header" style="margin-top: 0;">Data &amp; Backend Projects</div>
+        <div id="projects" class="tab-pane" role="tabpanel">
+            <div class="section-header" style="margin-top: 0;">Technical Projects</div>
 
-            <div style="margin-bottom: 35px;">
-                <span class="highlight" style="font-size: 1.2em;">NBA-Analytics-Pipeline/</span><br>
-                <b>Overview:</b> End-to-end hybrid Edge-to-Cloud ELT pipeline that bypasses cloud IP blocks using an asynchronous FastAPI edge worker over Tailscale VPN. Extracts daily NBA game, roster, and player stats with SQLite state tracking and resumable checkpointing, loads into Google BigQuery (and Snowflake in v1), transforms into SCD Type 2 dimensional marts via dbt &amp; Astronomer Cosmos, and serves metrics on a provisioned Grafana dashboard.<br>
-                <b>Tech Stack:</b> Python, Apache Airflow, FastAPI, Google BigQuery, Snowflake, dbt (Cosmos), Grafana, Tailscale, Docker, Azure, GitHub Actions<br>
-                <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[View on GitHub ↗]</a> &nbsp;|&nbsp; 
-                <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9" target="_blank" class="text-link">[Read v2 Case Study ↗]</a>
+            <!-- Project 1: Crypto Pipeline -->
+            <div style="margin-bottom: 40px;">
+                <span class="highlight" style="font-size: 1.25em;">1. Hybrid-Binance-Crypto-Market-Pipeline/</span><br>
+                <div>
+                    <span class="metrics-badge">115,000+ Market Events</span>
+                    <span class="metrics-badge">3,700+ Trading Pairs</span>
+                    <span class="metrics-badge">Debezium CDC (PostgreSQL WAL)</span>
+                    <span class="metrics-badge">30s Spark Micro-Batch Latency</span>
+                </div>
+                <div class="arch-box">Architecture: Binance API ➔ Airflow &amp; PostgreSQL (WAL) ➔ Debezium CDC ➔ Apache Kafka ➔ Spark Structured Streaming ➔ Apache Cassandra ➔ FastAPI ➔ Grafana</div>
+                <b>Engineering Breakdown:</b>
+                <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
+                    <li><b>Zero-Data-Loss Change Data Capture:</b> Streamed 115,000+ market events across 3,700+ Binance trading pairs with zero data loss by deploying Debezium CDC on PostgreSQL Write-Ahead Logs (WAL) into Apache Kafka.</li>
+                    <li><b>Low-Latency Stream Processing:</b> Achieved 30-second micro-batch latency and 1-minute windowed spread/OHLCV aggregations by engineering Spark Structured Streaming pipelines writing to Apache Cassandra and FastAPI inside Docker Compose.</li>
+                </ul>
+                <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a>
             </div>
 
-            <div style="margin-bottom: 35px;">
-                <span class="highlight" style="font-size: 1.2em;">housing-price-pipeline/</span><br>
-                <b>Overview:</b> Automated web scraping and orchestration pipeline designed to consistently pull, clean, and structure regional property data into PostgreSQL.<br>
-                <b>Tech Stack:</b> Python, Selenium, BeautifulSoup, Pandas, PostgreSQL, Apache Airflow<br>
-                <a href="https://github.com/Cliffe16/housing-price-pipeline" target="_blank" class="text-link">[View on GitHub ↗]</a>
+            <!-- Project 2: NBA ELT Pipeline -->
+            <div style="margin-bottom: 40px;">
+                <span class="highlight" style="font-size: 1.25em;">2. NBA-Analytics-Pipeline/ (Distributed Cloud ELT &amp; Analytics Platform)</span><br>
+                <div>
+                    <span class="metrics-badge">57,800+ Fact Rows</span>
+                    <span class="metrics-badge">&gt;99% Fewer Daily API Calls</span>
+                    <span class="metrics-badge">SCD Type 2 dbt Marts</span>
+                    <span class="metrics-badge">pytest + GitHub Actions CI/CD</span>
+                </div>
+                <div class="arch-box">Architecture: NBA Stats API ➔ FastAPI Edge Worker (Tailscale VPN + SQLite State) ➔ Apache Airflow (Azure VM) ➔ GCS Parquet / BigQuery (v2) &amp; Snowflake (v1) ➔ dbt (Cosmos) ➔ Grafana</div>
+                <b>Engineering Breakdown:</b>
+                <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
+                    <li><b>Distributed Edge-to-Cloud Extraction:</b> Guaranteed daily ingestion across rate-limited REST APIs by engineering a distributed Apache Airflow and FastAPI pipeline over Tailscale VPN with dynamic rate-limiting, SQLite checkpointing, and retry logic (cutting daily player API calls from ~550 to 0–5).</li>
+                    <li><b>Automated CI/CD &amp; Dimensional Modeling:</b> Caught schema-breaking changes in dimensional marts using dbt (SCD Type 2 player histories) coupled with automated `pytest` unit tests, dbt data quality checks, and GitHub Actions CI/CD workflows.</li>
+                </ul>
+                <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a> &nbsp;|&nbsp; 
+                <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9" target="_blank" class="text-link">[v2 Case Study &amp; Diagrams (DEV.to) ↗]</a> &nbsp;|&nbsp;
+                <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link">[v1 Case Study (Medium) ↗]</a>
             </div>
 
-            <div style="margin-bottom: 35px;">
-                <span class="highlight" style="font-size: 1.2em;">open_weather_streaming/</span><br>
-                <b>Overview:</b> Real-time event-driven streaming pipeline that continuously extracts live weather telemetry from the OpenWeatherMap API, publishes JSON events to Kafka topics, and flattens/loads streams directly into Apache Cassandra.<br>
-                <b>Tech Stack:</b> Python, Apache Kafka, Apache Cassandra, OpenWeatherMap API, Docker<br>
-                <a href="https://github.com/Cliffe16/Lux_Assignments/tree/main/Kafka/open_weather_streaming" target="_blank" class="text-link">[View on GitHub ↗]</a> &nbsp;|&nbsp;
-                <a href="https://dev.to/cliffe_okoth/how-apache-kafka-powers-real-time-data-pipelines-3ef9" target="_blank" class="text-link">[Read Architecture Breakdown ↗]</a>
+            <!-- Project 3: Microsoft Fabric Medallion Lakehouse -->
+            <div style="margin-bottom: 40px;">
+                <span class="highlight" style="font-size: 1.25em;">3. Microsoft-Fabric-Medallion-Lakehouse/</span><br>
+                <div>
+                    <span class="metrics-badge">Microsoft Fabric (DP-700)</span>
+                    <span class="metrics-badge">OneLake Delta Lake</span>
+                    <span class="metrics-badge">PySpark &amp; KQL Eventhouse</span>
+                    <span class="metrics-badge">Power BI Direct Lake</span>
+                </div>
+                <div class="arch-box">Architecture: Raw Telemetry &amp; Operational Feeds ➔ OneLake Bronze (Parquet) ➔ PySpark &amp; Dataflow Gen2 Silver (Delta Lake) ➔ Gold Star Schema &amp; KQL Eventhouse ➔ Power BI Direct Lake</div>
+                <b>Engineering Breakdown:</b>
+                <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
+                    <li><b>Medallion Lakehouse Engineering:</b> Implemented Bronze, Silver, and Gold layers in Microsoft Fabric OneLake using PySpark notebooks and Delta Lake tables, enforcing schema validation and deduplication before surfacing Gold star schemas via Power BI Direct Lake.</li>
+                    <li><b>Real-Time Intelligence:</b> Configured KQL Eventhouse pipelines for low-latency event querying and anomaly detection across streaming operational logs.</li>
+                </ul>
+                <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[View Fabric Repository on GitHub ↗]</a>
             </div>
 
+            <!-- Project 4: Bandcamp dbt Data Cleaning -->
             <div style="margin-bottom: 35px;">
-                <span class="highlight" style="font-size: 1.2em;">jumia_computers_scraper/</span><br>
-                <b>Overview:</b> Multi-page e-commerce extraction pipeline that scrapes computer listings across 20+ pages on Jumia, validates product card attributes with Pandas, and batches records into PostgreSQL via SQLAlchemy.<br>
-                <b>Tech Stack:</b> Python, BeautifulSoup4, Requests, Pandas, PostgreSQL, SQLAlchemy<br>
-                <a href="https://github.com/Cliffe16/jumia_computers_scraper" target="_blank" class="text-link">[View on GitHub ↗]</a>
-            </div>
-
-            <div style="margin-bottom: 35px;">
-                <span class="highlight" style="font-size: 1.2em;">de-handbook/</span><br>
-                <b>Overview:</b> Curated repository of practical reference notes, scripts, and architectural design patterns for modern data engineering.<br>
-                <b>Tech Stack:</b> Python, SQL, Data Architecture Patterns<br>
-                <a href="https://github.com/Cliffe16/de-handbook" target="_blank" class="text-link">[View on GitHub ↗]</a>
+                <span class="highlight" style="font-size: 1.25em;">4. bandcamp-data-cleaning/</span><br>
+                <div>
+                    <span class="metrics-badge">dbt Core</span>
+                    <span class="metrics-badge">Modular SQL Modeling</span>
+                    <span class="metrics-badge">Custom Singular &amp; Generic DQC Tests</span>
+                </div>
+                <div class="arch-box">Architecture: Raw Bandcamp Sales Events ➔ dbt Staging Views ➔ Standardized Currency/Transaction Models ➔ Automated SQL Data Quality Assertions</div>
+                <b>Engineering Breakdown:</b>
+                <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
+                    <li><b>Analytics Engineering &amp; DQC:</b> Built a modular dbt transformation pipeline (`bandcamp_transformation`) to standardize raw digital music e-commerce transactions and enforce custom singular SQL data quality tests (`amount_over_usd_is_positive.sql`).</li>
+                </ul>
+                <a href="https://github.com/Cliffe16/bandcamp-data-cleaning" target="_blank" class="text-link">[GitHub Repo ↗]</a>
             </div>
             
-            <br><br>
+            <br>
             <div><span style="color: var(--color-green); font-weight: bold;">cliffe@ubuntu</span>:<span style="color: var(--color-blue); font-weight: bold;">~/projects</span>$ <span class="blink">_</span></div>
         </div>
 
-        <!-- SKILLS TAB -->
-        <div id="skills" class="tab-pane">
-            <div class="section-header" style="margin-top: 0;">Technical Arsenal</div>
-            
-            <div class="grid-list" style="max-width: 750px;">
-                <div class="item-title">Programming:</div><div>Python, SQL, Bash Scripting</div>
-                <div class="item-title">Orchestration:</div><div>Apache Airflow, dbt (Astronomer Cosmos)</div>
-                <div class="item-title">Streaming:</div><div>Apache Kafka, PySpark</div>
-                <div class="item-title">Databases:</div><div>Google BigQuery, Snowflake, PostgreSQL, MySQL, Apache Cassandra, Redis</div>
-                <div class="item-title">Backend &amp; APIs:</div><div>Django, FastAPI, Celery, REST APIs</div>
-                <div class="item-title">Data Extraction:</div><div>Selenium, Playwright, BeautifulSoup4, Requests</div>
-                <div class="item-title">DevOps &amp; Cloud:</div><div>Docker, Linux (Ubuntu), Azure, GitHub Actions, Tailscale VPN</div>
-                <div class="item-title">Visualization:</div><div>Grafana, Power BI</div>
-                <div class="item-title">Certifications:</div><div>
-                    • Microsoft Certified: Fabric Data Engineer Associate (DP-700)<br>
-                    • Microsoft Certified: Azure Databricks Data Engineer (DP-750)
-                </div>
+        <!-- EXPERIENCE TAB: Exact Bullets & Metrics from Cliffe_Okoth.pdf -->
+        <div id="experience" class="tab-pane" role="tabpanel">
+            <div class="section-header" style="margin-top: 0;">Professional Experience</div>
+
+            <div style="margin-bottom: 32px;">
+                <span class="highlight">SugarCube Africa</span> | Data Engineer (Sep 2024 – Present) · <i>Nairobi, Kenya</i><br>
+                <ul style="margin: 8px 0 0 0; padding-left: 22px; color: var(--text-main);">
+                    <li>Built <b>Bronze, Silver, and Gold Medallion layers</b> on Delta Lake and Parquet in OneLake by writing PySpark and SQL ELT transformations that clean raw operational data and model it for Power BI.</li>
+                    <li>Eliminated <b>10+ hours/week of manual auditing</b> by enforcing data quality rules in PySpark across ~100 daily fulfillment logs and quarantining failing records before they reach reports.</li>
+                    <li>Integrated data from the company's MySQL trading platform database, price feeds, and REST APIs by running incremental Apache Airflow loads that extract only changed rows instead of scanning full tables.</li>
+                    <li>Cut API payload size by <b>97% (~200KB to 5KB)</b> and met morning-report SLAs by building daily Apache Airflow ETL extraction DAGs with Celery/Redis caching workers.</li>
+                    <li>Accelerated transaction clearance by <b>20%</b> using CTEs and window functions to give analysts and finance teams a clear view of stalled KYC and order records.</li>
+                    <li>Flagged price swings of <b>15% or more in 5-minute windows</b> by running tumbling-window anomaly detection on a Medallion lakehouse.</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 32px;">
+                <span class="highlight">Flamingo Commodities</span> | Data Analyst Intern (Jan 2024 – Aug 2024) · <i>Nairobi, Kenya</i><br>
+                <ul style="margin: 8px 0 0 0; padding-left: 22px; color: var(--text-main);">
+                    <li>Eliminated duplicate records by developing <b>PostgreSQL `MERGE` scripts</b> to securely ingest, clean, and reconcile raw market data.</li>
+                    <li>Saved <b>2+ hours of manual ingestion</b> by writing automated Python and Bash file-watcher ingestion scripts.</li>
+                </ul>
+            </div>
+
+            <div class="section-header">Education</div>
+            <div style="margin-bottom: 20px;">
+                • <span class="highlight">Lux Academy</span> | Data Engineering Bootcamp<br>
+                • <span class="highlight">Kenyatta University, Nairobi</span> | BSc Statistics and Programming (Oct 2021 – Present)
             </div>
             
-            <br><br>
+            <br>
+            <div><span style="color: var(--color-green); font-weight: bold;">cliffe@ubuntu</span>:<span style="color: var(--color-blue); font-weight: bold;">~/experience</span>$ <span class="blink">_</span></div>
+        </div>
+
+        <!-- SKILLS & CERTS TAB: Exact Grouping from Cliffe_Okoth.pdf -->
+        <div id="skills" class="tab-pane" role="tabpanel">
+            <div class="section-header" style="margin-top: 0;">Certifications</div>
+            <div style="margin-bottom: 25px;">
+                • <span class="highlight">Microsoft Certified: Fabric Data Engineer Associate (DP-700)</span><br>
+                • <span class="highlight">Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750)</span>
+            </div>
+
+            <div class="section-header">Core Skills</div>
+            <div class="grid-list" style="max-width: 850px;">
+                <div class="item-title">Azure &amp; Lakehouse:</div>
+                <div>Azure, Azure Databricks, Microsoft Fabric, OneLake, Delta Lake, Parquet</div>
+                
+                <div class="item-title">ETL/ELT &amp; Processing:</div>
+                <div>PySpark, Spark Structured Streaming, SQL, Python, Apache Airflow, dbt</div>
+                
+                <div class="item-title">Data Quality &amp; Governance:</div>
+                <div>Data validation, dead-letter quarantine handling, dbt tests, pytest, schema evolution</div>
+                
+                <div class="item-title">Modeling &amp; Warehousing:</div>
+                <div>Star schema, SCD Type 2, dimensional modeling, Snowflake, Google BigQuery, PostgreSQL, Apache Cassandra</div>
+                
+                <div class="item-title">Integration &amp; Delivery:</div>
+                <div>REST APIs, FastAPI, Debezium (CDC), Apache Kafka, Celery/Redis, GitHub Actions CI/CD, Docker</div>
+                
+                <div class="item-title">Reporting &amp; BI:</div>
+                <div>Power BI (DAX, Direct Lake), Grafana (Provisioned Dashboards)</div>
+            </div>
+            
+            <br>
             <div><span style="color: var(--color-green); font-weight: bold;">cliffe@ubuntu</span>:<span style="color: var(--color-blue); font-weight: bold;">~/skills</span>$ <span class="blink">_</span></div>
         </div>
 
         <!-- BLOGS TAB -->
-        <div id="blogs" class="tab-pane">
-            <div class="section-header" style="margin-top: 0;">Technical Articles</div>
+        <div id="blogs" class="tab-pane" role="tabpanel">
+            <div class="section-header" style="margin-top: 0;">Technical Writing &amp; Case Studies</div>
 
-            <div style="margin-bottom: 30px;">
-                <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9" target="_blank" class="text-link" style="font-size: 1.1em;">Outgrowing My First Data Pipeline ↗</a><br>
-                <b>Platform:</b> DEV Community | <b>Topics:</b> BigQuery, dbt, Airflow, FastAPI, Grafana
+            <div style="margin-bottom: 28px;">
+                <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9" target="_blank" class="text-link" style="font-size: 1.1em;">Outgrowing My First Data Pipeline: Migrating to Async Polling, BigQuery &amp; dbt ↗</a><br>
+                <b>Platform:</b> DEV Community | <b>Highlights:</b> Cutting daily API calls by 99%, fixing dbt Cosmos race conditions, and resolving BigQuery Sandbox partition drops.
             </div>
 
-            <div style="margin-bottom: 30px;">
+            <div style="margin-bottom: 28px;">
                 <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link" style="font-size: 1.1em;">Defeating Enterprise API Firewalls with a Hybrid Edge-to-Cloud ELT Architecture ↗</a><br>
-                <b>Platform:</b> Medium | <b>Topics:</b> Hybrid Cloud, Tailscale VPN, Snowflake, Airflow
+                <b>Platform:</b> Medium | <b>Highlights:</b> Connecting cloud Apache Airflow to a residential Ubuntu extraction worker over Tailscale mesh VPN.
             </div>
 
-            <div style="margin-bottom: 30px;">
+            <div style="margin-bottom: 28px;">
                 <a href="https://dev.to/cliffe_okoth/how-apache-kafka-powers-real-time-data-pipelines-3ef9" target="_blank" class="text-link" style="font-size: 1.1em;">How Apache Kafka Powers Real-Time Data Pipelines ↗</a><br>
-                <b>Platform:</b> DEV Community | <b>Topics:</b> Event-Driven Architecture, Apache Kafka, Cassandra
+                <b>Platform:</b> DEV Community | <b>Highlights:</b> Event-driven streaming fundamentals, broker partitioning, offset management, and Cassandra sinks.
             </div>
 
-            <div style="margin-bottom: 30px;">
+            <div style="margin-bottom: 28px;">
                 <a href="https://dev.to/cliffe_okoth/from-local-scripts-to-cloud-servers-demystifying-docker-for-dataops-38h" target="_blank" class="text-link" style="font-size: 1.1em;">From Local Scripts to Cloud Servers: Demystifying Docker for DataOps ↗</a><br>
-                <b>Platform:</b> DEV Community | <b>Topics:</b> Docker, Docker Compose, DataOps, Containers
+                <b>Platform:</b> DEV Community | <b>Highlights:</b> Pinning Apache Airflow environments with custom Dockerfiles and multi-container Docker Compose setups.
             </div>
 
-            <div style="margin-bottom: 30px;">
+            <div style="margin-bottom: 28px;">
                 <a href="https://dev.to/cliffe_okoth/a-beginners-guide-to-apache-airflow-3-4mp9" target="_blank" class="text-link" style="font-size: 1.1em;">The Blueprint for Modern Data Orchestration ↗</a><br>
-                <b>Platform:</b> DEV Community | <b>Topics:</b> Apache Airflow, DAGs, DataOps
+                <b>Platform:</b> DEV Community | <b>Highlights:</b> Why cron jobs fail at scale and how DAG dependencies, retries, and backfills work in Apache Airflow.
             </div>
             
-            <br><br>
+            <br>
             <div><span style="color: var(--color-green); font-weight: bold;">cliffe@ubuntu</span>:<span style="color: var(--color-blue); font-weight: bold;">~/blogs</span>$ <span class="blink">_</span></div>
         </div>
 
         <!-- CONTACT TAB -->
-        <div id="contact" class="tab-pane">
-            <div class="section-header" style="margin-top: 0;">Let's Connect</div>
+        <div id="contact" class="tab-pane" role="tabpanel">
+            <div class="section-header" style="margin-top: 0;">Contact &amp; Profiles</div>
 
-            <div style="line-height: 2; margin-bottom: 30px;">
+            <div style="line-height: 2.1; margin-bottom: 30px;">
+                <b>Location:</b> Nairobi, Kenya (Open to Remote, Hybrid &amp; On-site)<br>
+                <b>Phone:</b> +254 797 752 778<br>
                 <b>Email:</b> <a href="mailto:oluochcliffe13@gmail.com" class="text-link">oluochcliffe13@gmail.com</a><br>
-                <b>DEV Community:</b> <a href="https://dev.to/cliffe_okoth" target="_blank" class="text-link">dev.to/cliffe_okoth ↗</a><br>
-                <b>Medium:</b> <a href="https://medium.com/@cliffe016" target="_blank" class="text-link">medium.com/@cliffe016 ↗</a><br>
                 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cliffeoluoch/" target="_blank" class="text-link">linkedin.com/in/cliffeoluoch ↗</a><br>
-                <b>GitHub:</b> <a href="https://github.com/Cliffe16" target="_blank" class="text-link">github.com/Cliffe16 ↗</a>
+                <b>GitHub:</b> <a href="https://github.com/Cliffe16" target="_blank" class="text-link">github.com/Cliffe16 ↗</a><br>
+                <b>DEV Community:</b> <a href="https://dev.to/cliffe_okoth" target="_blank" class="text-link">dev.to/cliffe_okoth ↗</a><br>
+                <b>Medium:</b> <a href="https://medium.com/@cliffe016" target="_blank" class="text-link">medium.com/@cliffe016 ↗</a>
             </div>
 
-            <div class="section-header">Download Resume</div>
+            <div class="section-header">Resume</div>
             <div class="file-transfer">
-                Initiating file transfer protocol...<br>
+                $ curl -O https://cliffeokoth.site/Cliffe_Okoth.pdf<br>
                 [=================================================>] 100%<br>
-                <span style="color: var(--text-main);">File ready. <a href="Cliffe_Oluoch_Resume.pdf" target="_blank" class="text-link">[Download Cliffe_Oluoch_Resume.pdf]</a></span>
+                <span style="color: var(--text-main);">Ready: <a href="Cliffe_Okoth.pdf" target="_blank" class="text-link">[Download Cliffe_Okoth.pdf]</a></span>
             </div>
             
             <br><br>
@@ -450,18 +548,42 @@
     </div>
 
     <script>
-        function switchTab(tabId) {
-            const targetPane = document.getElementById(tabId);
-            if (targetPane && targetPane.classList.contains('active')) return;
+        const validTabs = ['profile', 'projects', 'experience', 'skills', 'blogs', 'contact'];
 
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+        function switchTab(tabId, updateHash = true) {
+            if (!validTabs.includes(tabId)) tabId = 'profile';
 
-            const clickedTab = Array.from(document.querySelectorAll('.tab')).find(t => t.getAttribute('onclick').includes(tabId));
-            if (clickedTab) clickedTab.classList.add('active');
-            
-            if (targetPane) targetPane.classList.add('active');
+            document.querySelectorAll('.tab').forEach(t => {
+                const isMatch = t.getAttribute('data-tab') === tabId;
+                t.classList.toggle('active', isMatch);
+                t.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+            });
+
+            document.querySelectorAll('.tab-pane').forEach(p => {
+                p.classList.toggle('active', p.id === tabId);
+            });
+
+            const contentArea = document.getElementById('terminal-content');
+            if (contentArea) contentArea.scrollTop = 0;
+
+            if (updateHash) {
+                history.replaceState(null, null, '#' + tabId);
+            }
         }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (validTabs.includes(hash)) {
+                switchTab(hash, false);
+            }
+        });
+
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (validTabs.includes(hash)) {
+                switchTab(hash, false);
+            }
+        });
     </script>
 </body>
 </html>
