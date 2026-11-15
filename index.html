@@ -385,14 +385,14 @@
             </div>
             <div style="margin-bottom: 14px;">
                 2. <span class="highlight">Distributed Cloud ELT &amp; Analytics Platform:</span><br>
-                &nbsp;&nbsp;&nbsp;Hybrid edge-to-cloud pipeline modeling <b>57,800+</b> NBA game/player rows across 3 seasons in BigQuery &amp; Snowflake (v1) <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a> &nbsp;|&nbsp; <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9#from-warehouse-to-dashboard" target="_blank" class="text-link">[Dashboard Case Study ↗]</a>
+                &nbsp;&nbsp;&nbsp;Hybrid edge-to-cloud pipeline modeling <b>57,800+</b> NBA game/player rows across 3 seasons in BigQuery &amp; Snowflake (v1) <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a> &nbsp;|&nbsp; <a href="https://nba-fastapi-vm.tailc63d64.ts.net" target="_blank" class="text-link">[Live Dashboard ↗]</a>
             </div>
             <div style="margin-bottom: 18px;">
                 3. <span class="highlight">Microsoft Fabric Agricultural Commodities Pipeline (Reference Implementation):</span><br>
                 &nbsp;&nbsp;&nbsp;End-to-end Medallion Lakehouse on OneLake using PySpark, Delta Lake, Dataflow Gen2, and Power BI Direct Lake for agricultural commodity analytics <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub ↗]</a>
             </div>
             <div>
-                👉 <button class="text-link" onclick="switchTab('projects')">[View Full Technical Breakdowns &amp; Diagrams in Projects →]</button>
+                👉 <button class="text-link" onclick="switchTab('projects')">[View Full Technical Breakdowns →]</button>
             </div>
 
             <div class="section-header">Connect</div>
@@ -411,12 +411,11 @@
 
         <!-- PROJECTS TAB -->
         <div id="projects" class="tab-pane" role="tabpanel">
-            <div class="section-header" style="margin-top: 0;">Technical Projects &amp; System Architectures</div>
+            <div class="section-header" style="margin-top: 0;">Technical Projects</div>
 
             <!-- Project 1: Crypto Pipeline -->
             <div class="project-card">
                 <span class="highlight" style="font-size: 1.25em;">1. Hybrid-Binance-Crypto-Market-Pipeline/</span>
-                <span class="project-context-tag">Micro-Batch Streaming CDC Architecture</span><br>
                 <div>
                     <span class="metrics-badge">115,000+ Reconciled Events</span>
                     <span class="metrics-badge">3,700+ Trading Pairs</span>
@@ -469,7 +468,6 @@
                     </svg>
                 </div>
 
-                <b>Engineering Breakdown &amp; Verification:</b>
                 <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
                     <li><b>Log-Based Change Data Capture (CDC):</b> Streamed 115,000+ market events across 3,700+ Binance trading pairs by deploying Debezium CDC connectors reading directly from PostgreSQL Write-Ahead Logs (WAL) into partitioned Apache Kafka topics.</li>
                     <li><b>Delivery Guarantees &amp; Reconciliation:</b> Verified end-to-end completeness between PostgreSQL source tables and Apache Cassandra sink partitions by tracking PostgreSQL replication slot LSN offsets, enforcing Spark checkpointing with `maxOffsetsPerTrigger`, and reconciling source-to-sink row counts.</li>
@@ -478,13 +476,13 @@
 
                 <!-- Inline Strongest Dashboard Image -->
                 <div class="inline-evidence">
-                    <div class="diagram-caption">Live Grafana Orderbook &amp; Candlestick Dashboard (Served via FastAPI &amp; Cassandra)</div>
+                    <div class="diagram-caption">Grafana Snapshot (Served via FastAPI &amp; Cassandra)</div>
                     <img src="assets/grafana.png" alt="Grafana Crypto Telemetry Dashboard" class="project-screenshot" onerror="this.style.display='none'">
                 </div>
 
                 <!-- Additional Verification Screenshots in Drawer -->
                 <details class="screenshot-drawer">
-                    <summary>[📊 View Spark Streaming Logs, Fault Tolerance, Schema Capture &amp; Cassandra Queries]</summary>
+                    <summary>[View Spark Streaming Logs, Fault Tolerance, Schema Capture &amp; Cassandra Queries]</summary>
                     <div style="margin-top: 8px; color: var(--text-muted); font-size: 0.92em;">
                         <div><b>1. Fault Tolerance &amp; Recovery:</b></div>
                         <img src="assets/fault_tolerance.png" alt="Fault Tolerance Verification" class="project-screenshot" onerror="this.style.display='none'">
@@ -497,14 +495,13 @@
                     </div>
                 </details>
                 <div style="margin-top: 10px;">
-                    <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub Repository &amp; Code ↗]</a>
+                    <a href="https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a>
                 </div>
             </div>
 
             <!-- Project 2: NBA ELT Pipeline -->
             <div class="project-card">
                 <span class="highlight" style="font-size: 1.25em;">2. NBA-Analytics-Pipeline/</span>
-                <span class="project-context-tag">Hybrid Edge-to-Cloud ELT</span><br>
                 <div>
                     <span class="metrics-badge">57,800+ Modeled Fact Rows</span>
                     <span class="metrics-badge">&gt;Fewer Daily API Calls (550 ➔ 0–5)</span>
@@ -514,7 +511,7 @@
 
                 <!-- Embedded SVG Architecture Diagram -->
                 <div class="diagram-container">
-                    <div class="diagram-caption">System Architecture Diagram — Async Edge Extraction over Tailscale VPN to Cloud ELT</div>
+                    <div class="diagram-caption">System Architecture Diagram</div>
                     <svg viewBox="0 0 880 95" width="100%" height="95" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NBA Analytics Pipeline Architecture Diagram">
                         <defs>
                             <marker id="arrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -557,7 +554,6 @@
                     </svg>
                 </div>
 
-                <b>Engineering Breakdown:</b>
                 <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
                     <li><b>Bypassed Cloud IP Firewalls:</b> Decoupled extraction from the Azure Airflow VM to a local Ubuntu edge worker over Tailscale VPN using an asynchronous HTTP 202 trigger-and-poll pattern with SQLite state recovery.</li>
                     <li><b>99% API Load Reduction:</b> Built incremental BigQuery roster diffing and `finally`-block checkpointing that resumes interrupted runs from the last saved player ID, reducing daily player biography requests from ~550 calls to 0–5 calls.</li>
@@ -565,16 +561,16 @@
                 </ul>
 
                 <div style="margin-top: 10px;">
-                    <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub Repo ↗]</a> &nbsp;|&nbsp; 
-                    <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9#from-warehouse-to-dashboard" target="_blank" class="text-link">[View Dashboard Screenshots &amp; v2 Case Study (DEV.to) ↗]</a> &nbsp;|&nbsp;
-                    <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link">[v1 Architecture Case Study (Medium) ↗]</a>
+                    <a href="https://github.com/Cliffe16/NBA-Analytics-Pipeline" target="_blank" class="text-link">[GitHub ↗]</a> &nbsp;|&nbsp; 
+                    <a href="https://nba-fastapi-vm.tailc63d64.ts.net" target="_blank" class="text-link">[Live Dashboard ↗]</a> &nbsp;|&nbsp;
+                    <a href="https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9#from-warehouse-to-dashboard" target="_blank" class="text-link">[v2 Case Study ↗]</a> &nbsp;|&nbsp;
+                    <a href="https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad" target="_blank" class="text-link">[v1 Architecture Case Study ↗]</a>
                 </div>
             </div>
 
             <!-- Project 3: Microsoft Fabric Agri-Commodity Engine -->
             <div class="project-card" style="border-bottom: none;">
                 <span class="highlight" style="font-size: 1.25em;">3. fabric-agri-commodity-engine-pipelines/</span>
-                <span class="project-context-tag">Public Reference Implementation (Synthetic Data)</span><br>
                 <div>
                     <span class="metrics-badge">Microsoft Fabric (DP-700)</span>
                     <span class="metrics-badge">3-Tier OneLake Medallion</span>
@@ -621,21 +617,13 @@
                     </svg>
                 </div>
 
-                <b>Context &amp; Engineering Breakdown:</b>
                 <ul style="margin: 6px 0 10px 0; padding-left: 22px;">
-                    <li><b>Why This Repo Exists:</b> Because production code at SugarCube Africa is proprietary, I built this open-source reference project using <b>synthetic agricultural commodity pricing and fulfillment data</b> to publicly demonstrate the Microsoft Fabric Medallion patterns I architected in production.</li>
                     <li><b>Medallion Lakehouse &amp; Quarantine Gates:</b> Processes simulated daily batches (~100 fulfillment logs and multi-region price feeds) through Bronze (Parquet), Silver (PySpark schema validation &amp; dead-letter quarantine routing for malformed records), and Gold star-schema Delta tables in OneLake.</li>
                     <li><b>Windowed Price Anomaly Detection:</b> Implements 5-minute tumbling-window PySpark aggregations to flag volatile commodity price swings (&ge;15%) and exposes governed Gold tables for Power BI Direct Lake consumption.</li>
                 </ul>
 
-                <!-- Inline Fabric Screenshot -->
-                <div class="inline-evidence">
-                    <div class="diagram-caption">OneLake Bronze/Silver/Gold Medallion Lineage &amp; Pipeline Visual</div>
-                    <img src="assets/Screenshot%20from%202026-06-04%2015-49-40.png" alt="Microsoft Fabric Medallion Lakehouse Architecture" class="project-screenshot" onerror="this.style.display='none'">
-                </div>
-
                 <div style="margin-top: 10px;">
-                    <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub Repository &amp; PySpark Notebooks ↗]</a>
+                    <a href="https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines" target="_blank" class="text-link">[GitHub ↗]</a>
                 </div>
             </div>
             
@@ -682,9 +670,7 @@
             <div class="section-header" style="margin-top: 0;">Certifications</div>
             <div style="margin-bottom: 25px;">
                 • <span class="highlight">Microsoft Certified: Fabric Data Engineer Associate (DP-700)</span><br>
-                &nbsp;&nbsp;<span style="color: var(--text-muted);">Applied in production at SugarCube Africa &amp; open-source OneLake Medallion reference pipelines.</span><br><br>
                 • <span class="highlight">Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750)</span><br>
-                &nbsp;&nbsp;<span style="color: var(--text-muted);">Backed by hands-on PySpark Structured Streaming, Delta Lake Medallion modeling, and watermarking/checkpointing pipelines.</span>
             </div>
 
             <div class="section-header">Core Skills</div>
@@ -750,7 +736,6 @@
             <div class="section-header" style="margin-top: 0;">Contact &amp; Profiles</div>
 
             <div style="line-height: 2.1; margin-bottom: 30px;">
-                <b>Location:</b> Nairobi, Kenya (Open to Remote, Hybrid &amp; On-site)<br>
                 <b>Email:</b> <a href="mailto:oluochcliffe13@gmail.com" class="text-link">oluochcliffe13@gmail.com</a><br>
                 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cliffeoluoch/" target="_blank" class="text-link">linkedin.com/in/cliffeoluoch ↗</a><br>
                 <b>GitHub:</b> <a href="https://github.com/Cliffe16" target="_blank" class="text-link">github.com/Cliffe16 ↗</a><br>
