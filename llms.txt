@@ -1,0 +1,54 @@
+# Cliffe Oluoch Okoth
+
+> Data and Analytics Engineer based in Nairobi, Kenya with 2+ years of experience building batch and streaming data pipelines in Python and SQL. Microsoft Certified in Microsoft Fabric (DP-700) and Azure Databricks (DP-750).
+
+Cliffe Oluoch Okoth specializes in Medallion lakehouse architectures (OneLake, Delta Lake, Parquet), log-based Change Data Capture (Debezium, PostgreSQL WAL, Apache Kafka), PySpark Structured Streaming and orchestrated ETL/ELT pipelines (Apache Airflow, dbt, Astronomer Cosmos, Google BigQuery, Snowflake).
+
+## Core Links
+
+- [Portfolio Homepage](https://cliffeokoth.site/): Interactive terminal-style portfolio covering projects, work experience, skills, certifications, and technical writing.
+- [Resume (PDF)](https://cliffeokoth.site/Cliffe_Okoth.pdf): Full CV with verified work history, technical stack, and project metrics.
+- [GitHub Profile](https://github.com/Cliffe16): Source code for data engineering pipelines and architecture documentation.
+- [LinkedIn Profile](https://www.linkedin.com/in/cliffeoluoch/): Professional background and certifications.
+
+## Featured Data Engineering Projects
+
+- [Hybrid Binance Crypto Market Pipeline](https://github.com/Cliffe16/Hybrid-Binance-Crypto-Market-Pipeline): Real-time CDC and micro-batch streaming engine processing 115,000+ market events across 3,700+ Binance trading pairs using PostgreSQL WAL, Debezium CDC, Apache Kafka, PySpark Structured Streaming (30s micro-batch latency, 1m tumbling-window OHLCV), Apache Cassandra, FastAPI, and Grafana.
+- [NBA Analytics Pipeline](https://github.com/Cliffe16/NBA-Analytics-Pipeline): Hybrid edge-to-cloud ELT platform modeling 57,800+ NBA player-game and team-game rows across 3 seasons in Google BigQuery (migrated from Snowflake v1). Uses a residential Ubuntu FastAPI edge worker over Tailscale VPN, Azure VM Apache Airflow, dbt with Astronomer Cosmos (SCD Type 2), pytest, GitHub Actions CI/CD, and Grafana—cutting daily API calls by 99% (~550 to 0–5).
+- [NBA Live Grafana Dashboard](https://nba-fastapi-vm.tailc63d64.ts.net): Code-provisioned Grafana BI dashboard serving the NBA Analytics Pipeline.
+- [Microsoft Fabric Agricultural Commodities Pipeline](https://github.com/Cliffe16/fabric-agri-commodity-engine-pipelines): Reference Medallion lakehouse implementation on Microsoft Fabric OneLake using PySpark, Delta Lake, Dataflow Gen2, quarantine data quality gates, 5-minute tumbling-window price anomaly detection (≥15% swings), and Power BI Direct Lake.
+
+## Professional Experience
+
+- **Data Engineer at SugarCube Africa (Sep 2024 – Present, Nairobi, Kenya)**: Built Bronze/Silver/Gold Medallion layers on OneLake/Delta Lake with PySpark and SQL; eliminated 10+ hours/week of manual auditing via automated PySpark data quality and quarantine rules; built incremental Apache Airflow DAGs with Celery/Redis caching that cut API payload sizes by 97% (~200KB to 5KB); accelerated transaction clearance by 20% via SQL CTEs and window functions; implemented 5-minute tumbling-window anomaly detection for ≥15% price swings.
+- **Data Analyst Intern at Flamingo Commodities (Jan 2024 – Aug 2024, Nairobi, Kenya)**: Eliminated duplicate market records using PostgreSQL MERGE scripts and saved 2+ hours of manual work via Python and Bash file-watcher ingestion scripts.
+
+## Certifications & Education
+
+- **Microsoft Certified: Fabric Data Engineer Associate (DP-700)**
+- **Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750)**
+- **Data Engineering Bootcamp** — Lux Academy (2025)
+- **BSc Statistics and Programming** — Kenyatta University, Nairobi (Oct 2021 – Present)
+
+## Technical Writing
+
+- [Outgrowing My First Data Pipeline: Migrating to Async Polling, BigQuery & dbt](https://dev.to/cliffe_okoth/outgrowing-my-first-data-pipeline-4lg9): Cutting daily API calls by 99%, fixing dbt Cosmos race conditions, and handling BigQuery Sandbox partitions.
+- [Defeating Enterprise API Firewalls with a Hybrid Edge-to-Cloud ELT Architecture](https://medium.com/@cliffe016/defeating-enterprise-api-firewalls-with-a-hybrid-edge-to-cloud-elt-architecture-98b8c2a36aad): Connecting cloud Apache Airflow to a residential Ubuntu extraction worker over Tailscale mesh VPN.
+- [How Apache Kafka Powers Real-Time Data Pipelines](https://dev.to/cliffe_okoth/how-apache-kafka-powers-real-time-data-pipelines-3ef9): Event-driven streaming, broker partitioning, offset management, and Cassandra sinks.
+- [From Local Scripts to Cloud Servers: Demystifying Docker for DataOps](https://dev.to/cliffe_okoth/from-local-scripts-to-cloud-servers-demystifying-docker-for-dataops-38h): Pinning Apache Airflow environments with Dockerfiles and Docker Compose.
+- [The Blueprint for Modern Data Orchestration](https://dev.to/cliffe_okoth/a-beginners-guide-to-apache-airflow-3-4mp9): Apache Airflow DAG dependencies, retries, and backfills versus cron jobs.
+
+## Core Technical Stack
+
+- **Cloud & Lakehouse**: Microsoft Fabric, OneLake, Azure Databricks, Azure, Delta Lake, Parquet
+- **Processing & Orchestration**: Python, SQL, PySpark, Spark Structured Streaming, Apache Airflow, dbt, Astronomer Cosmos
+- **Streaming & Integration**: Debezium (WAL CDC), Apache Kafka, FastAPI, REST APIs, Celery, Redis, Tailscale VPN, Docker, GitHub Actions CI/CD
+- **Warehousing & Databases**: Google BigQuery, Snowflake, PostgreSQL, MySQL, Apache Cassandra
+- **Data Quality & BI**: PySpark quarantine patterns, LSN/row-count reconciliation, dbt tests, pytest, Power BI (DAX, Direct Lake), Grafana
+
+## Contact
+
+- Email: oluochcliffe13@gmail.com
+- Linkedin: https://www.linkedin.com/in/cliffeoluoch
+- DEV Community: https://dev.to/cliffe_okoth
+- Medium: https://medium.com/@cliffe016
