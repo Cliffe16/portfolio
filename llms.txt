@@ -52,3 +52,12 @@ Cliffe Oluoch Okoth specializes in Medallion lakehouse architectures (OneLake, D
 - Linkedin: https://www.linkedin.com/in/cliffeoluoch
 - DEV Community: https://dev.to/cliffe_okoth
 - Medium: https://medium.com/@cliffe016
+
+## Frequently Asked Questions
+
+- **What data engineering platforms and tools does Cliffe Okoth specialize in?**
+  Cliffe Oluoch Okoth builds batch and streaming data pipelines using Python, SQL, PySpark, Apache Kafka, Debezium CDC, Apache Airflow, dbt (Astronomer Cosmos), Microsoft Fabric (OneLake/Delta Lake), Azure Databricks, Google BigQuery, and Snowflake.
+- **What Microsoft certifications does Cliffe Okoth hold?**
+  He holds both the Microsoft Certified: Fabric Data Engineer Associate (DP-700) and Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750) certifications.
+- **Where is Cliffe Okoth based and what roles is he open to?**
+  He is based in Nairobi, Kenya, and is open to remote or hybrid Data Engineering and Analytics Engineering roles.
