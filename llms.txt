@@ -2,11 +2,14 @@
 
 > Data and Analytics Engineer based in Nairobi, Kenya with 2+ years of experience building batch and streaming data pipelines in Python and SQL. Microsoft Certified in Microsoft Fabric (DP-700) and Azure Databricks (DP-750).
 
+Also known as: Cliffe Okoth, Cliffe Oluoch.
+Last updated: 2026-11-25.
+
 Cliffe Oluoch Okoth specializes in Medallion lakehouse architectures (OneLake, Delta Lake, Parquet), log-based Change Data Capture (Debezium, PostgreSQL WAL, Apache Kafka), PySpark Structured Streaming and orchestrated ETL/ELT pipelines (Apache Airflow, dbt, Astronomer Cosmos, Google BigQuery, Snowflake).
 
 ## Core Links
 
-- [Portfolio Homepage](https://cliffeokoth.site/): Interactive terminal-style portfolio covering projects, work experience, skills, certifications, and technical writing.
+- [Portfolio Homepage](https://cliffeokoth.site/): Ubuntu-terminal-style single-page portfolio covering projects (with architecture diagrams), work experience, skills, certifications, and technical writing.
 - [Resume (PDF)](https://cliffeokoth.site/Cliffe_Okoth.pdf): Full CV with verified work history, technical stack, and project metrics.
 - [GitHub Profile](https://github.com/Cliffe16): Source code for data engineering pipelines and architecture documentation.
 - [LinkedIn Profile](https://www.linkedin.com/in/cliffeoluoch/): Professional background and certifications.
@@ -25,8 +28,8 @@ Cliffe Oluoch Okoth specializes in Medallion lakehouse architectures (OneLake, D
 
 ## Certifications & Education
 
-- **Microsoft Certified: Fabric Data Engineer Associate (DP-700)**
-- **Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750)**
+- **Microsoft Certified: Fabric Data Engineer Associate (DP-700)**: [verify](https://learn.microsoft.com/en-us/users/cliffeoluoch-4010/credentials/certification/fabric-data-engineer-associate)
+- **Microsoft Certified: Azure Databricks Data Engineer Associate (DP-750)**: [verify](https://learn.microsoft.com/en-us/users/cliffeoluoch-4010/credentials/certification/implementing-data-engineering-solutions-using-azure-databricks)
 - **Data Engineering Bootcamp** — Lux Academy (2025)
 - **BSc Statistics and Programming** — Kenyatta University, Nairobi (Oct 2021 – Present)
 

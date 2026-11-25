@@ -1,0 +1,4 @@
+# Impeccable: per-developer consent and local critique snapshots
+.impeccable/config.local.json
+.impeccable/critique/
+.impeccable/hook.cache.json

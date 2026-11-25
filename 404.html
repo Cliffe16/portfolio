@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="text-scale" content="scale">
+    <title>404: Not found | Cliffe Oluoch Okoth</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#222222">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23300a24'/><text x='14' y='68' font-family='monospace' font-size='55' font-weight='bold' fill='%238ae234'>&gt;_</text></svg>">
+    <style>
+        @font-face { font-family: "Ubuntu Mono"; src: url("/assets/fonts/ubuntu-mono-400-latin.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+        @font-face { font-family: "Ubuntu Mono"; src: url("/assets/fonts/ubuntu-mono-700-latin.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+        :root { color-scheme: dark; }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: #300a24;
+            color: #eeeeec;
+            font-family: "Ubuntu Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace;
+            font-size: clamp(0.9375rem, 0.85rem + 0.35vw, 1.125rem);
+            line-height: 1.5;
+            font-size-adjust: ch-width from-font;
+        }
+        .titlebar {
+            height: 2.4rem; display: flex; align-items: center; justify-content: center;
+            background: #222; border-bottom: 1px solid #111; color: #c8c8c8; font-size: 0.92em;
+        }
+        main { padding: 1.25rem clamp(0.9rem, 2.5vw, 2.25rem); max-width: 90ch; }
+        p { margin: 0 0 0.4rem; overflow-wrap: anywhere; }
+        .u { color: #8ae234; font-weight: 700; }
+        .p { color: #729fcf; font-weight: 700; }
+        .err { color: #ef2929; }
+        .dim { color: #b9afb5; }
+        a { color: #34e2e2; text-underline-offset: 0.18em; }
+        a:focus-visible { outline: 2px solid #fce94f; outline-offset: 2px; }
+        .gap { margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <header class="titlebar">cliffe@portfolio: ~</header>
+    <main>
+        <h1 style="font-size:1em;margin:0 0 0.4rem;font-weight:400"><span class="u">cliffe@portfolio</span>:<span class="p">~</span>$ cd <span id="path">this-page</span></h1>
+        <p class="err">bash: cd: <span id="path2">this-page</span>: No such file or directory</p>
+        <p class="gap dim"># 404: that page doesn't exist. Try one of these:</p>
+        <p><span class="u">cliffe@portfolio</span>:<span class="p">~</span>$ <a href="/">cd ~</a> <span class="dim">(home)</span></p>
+        <p><span class="u">cliffe@portfolio</span>:<span class="p">~</span>$ <a href="/#projects">cd ~/projects</a></p>
+        <p><span class="u">cliffe@portfolio</span>:<span class="p">~</span>$ <a href="/#contact">./contact.sh</a></p>
+        <p><span class="u">cliffe@portfolio</span>:<span class="p">~</span>$ <a href="/Cliffe_Okoth.pdf">open resume.pdf</a></p>
+    </main>
+    <script>
+        (function () {
+            var p = decodeURIComponent(location.pathname).slice(0, 80) || '/';
+            document.getElementById('path').textContent = p;
+            document.getElementById('path2').textContent = p;
+        })();
+    </script>
+</body>
+</html>
